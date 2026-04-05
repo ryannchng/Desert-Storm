@@ -1,356 +1,179 @@
+###############################################
+# Kuwait — August 2, 1990
+# Desert Storm submod — full overwrite of MD 2000-era setup
+# Historical basis: Iraqi invasion of Kuwait, August 2 1990
+# SPECIAL: Kuwait is occupied at game start — state 172 transfers to IRQ
+# via bookmark start script. This file sets up the government in exile.
+###############################################
+
 capital = 172
-2000.1.1 = {
-	set_variable = { currency_strength = 0.65 }
-	set_cosmetic_tag = KUW
-	set_variable = { gdp_per_capita = 58.117 }
+# Kuwait City — state 172 confirmed, single Kuwait state in map
+# DS_NOTE: State 172 is transferred to IRQ in the bookmark start script
+# Taif (actual exile location) is not a distinct map state — capital
+# stays at 172 representing the legitimate claim, not physical control
 
-	complete_special_project = sp:sp_composite_production
-	complete_special_project = sp:sp_helicopter_project
+set_research_slots = 1
+# Government in exile — minimal research capacity
 
-	# Starting tech
-	set_technology = {
-		combined_arms = 1
-		night_vision_1 = 1
-		night_vision_2 = 1
-		infantry_weapons_1 = 1
-		combat_eng_equipment = 1
-		cnc_equipment_1 = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		util_vehicle_1 = 1
-		camouflage_1 = 1
-		camouflage_2 = 1
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		radar = 1
-		internet1 = 1
-		internet2 = 1
-		gprs = 1
-		fuel_silos = 1
-		support_weapons = 1
-		nanofibers_1 = 1
-		nanofibers_2 = 1
-		printing_1 = 1
-		printing_2 = 1
-		genetics_1 = 1
-		fuel_refining = 1
-		fuel_refining2 = 1
-		energy_efficiency = 1
-		energy_efficiency2 = 1
-		fuel_efficiency = 1
-		early_renewables = 1
-		renewables = 1
-		electrification_1 = 1
-		construction1 = 1
-	}
+set_stability = 0.20
+# Country is occupied; government fled to Saudi Arabia (Taif)
+# Severe stability penalty reflects loss of territory and legitimacy crisis
 
-	if = {
-		limit = { NOT = { has_dlc = "La Resistance" } }
-		set_technology = {
-			decryption1 = 1
-			encryption1 = 1
-		}
-	}
-	if = { limit = { has_dlc = "No Step Back" }
+set_war_support = 0.85
+# Kuwaiti government in exile is maximally motivated for liberation
+# Resistance movement active inside occupied Kuwait
 
-		set_oob = "KUW_2000_nsb"
-		set_technology = {
-			mbt_tech_ops = 1
-			mbt_tech = 1
-			nsb_artillery_0 = 1
-			SP_arty_0 = 1
-			nsb_Anti_Air_0 = 1
-			helo_ops_tech = 1
-			nsb_transport_helicopter_2 = 1
-			nsb_transport_helicopter_1 = 1
-		}
-
-		else = {
-			set_oob = "KUW_2000_nonnsb"
-			set_technology = {
-				MBT_1 = 1
-				Early_APC = 1
-				APC_1 = 1
-				IFV_1 = 1
-				tech_arty_0 = 1
-				SP_arty_0 = 1
-				SP_R_arty_0 = 1
-				Anti_Air_0 = 1
-				SP_Anti_Air_0 = 1
-				transport_helicopter_1 = 1
-			}
-		}
-	}
-
-	if = { limit = { has_dlc = "By Blood Alone" }
-		set_air_oob = "KUW_2000_bba"
-		send_embargo = ISR
-		else = {
-			set_air_oob = "KUW_2000_nonbba"
-		}
-	}
-
-	add_ideas = {
-		partially_nationalized_healthcare
-		economic_motivated_mining
-		extensive_maintenance
-		us_dollar
-		light_regulations
-
-		systematic_corruption
-		sunni
-		LoAS_member
-		idea_gcc_member_state
-		legacy_of_the_gulf_war
-		rentier_state
-		oil_dependency
-		GCC_censored_nation_01
-		conservative_society
-		shia_resistance_02
-		youth_radicalization
-		al_jazeera_allowed
-		kuwait_expat
-		export_economy
-		stagnation
-		defence_05
-		edu_03
-		health_03
-		social_06
-		bureau_04
-		police_04
-		draft_army
-		volunteer_women
-		small_medium_business_owners
-		saudi_royal_family
-		the_ulema
-		officer_advanced_training
-		substantial_shia_population
-		full_isr_boycotte
-	}
-	#israel blockade
-	add_opinion_modifier = {
-		target = ISR
-		modifier = full_blockades_isr
-	}
-
-	set_variable = { var = debt value = 39.263 }
-	set_variable = { var = treasury value = 7 }
-	set_variable = { var = int_investments value = 122 }
-	set_variable = { var = corporate_tax_rate value = 13 }
-	set_variable = { var = population_tax_rate value = 2 }
-	set_variable = { overall_productivity = 1251 }
-
-	set_variable = { the_ulema_opinion = 60 }
-	set_variable = { saudi_royal_family_opinion = 60 }
-	set_variable = { small_medium_business_owners_opinion = 60 }
-
-	#Islamism
-	set_variable = { social_conservatism_government = 65 }
-	set_variable = { social_conservatism_society = 65 }
-	#Shia
-	set_variable = { shia_population = 25 }
-	#UAR
-	add_to_array = { global.arabic_countries = THIS }	#From is_arabic_nation trigger
-
-	add_opinion_modifier = { target = USA modifier = supports_us }
-	add_opinion_modifier = { target = USA modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = CAN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ENG modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = IRE modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = FRA modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SPR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = POR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = AUS modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ITA modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = BEL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = HOL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = LUX modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = GER modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = DEN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = NOR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SWE modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = FIN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = POL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = EST modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = LAT modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = LIT modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = CZE modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SLO modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = HUN modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ROM modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = BUL modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = CRO modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = TUR modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = SWI modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = ICE modifier = Arabian_Peninsula_West_Economical_Relations }
-	add_opinion_modifier = { target = CHI modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	add_opinion_modifier = { target = KOR modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	add_opinion_modifier = { target = RAJ modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	add_opinion_modifier = { target = JAP modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	add_opinion_modifier = { target = SOV modifier = Arabian_Peninsula_Russia_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SAU modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = BHR modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = UAE modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = OMA modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = QAT modifier = Gulf_Cooperation_Council_Relations }
-	reverse_add_opinion_modifier = { target = USA modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = CAN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ENG modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = IRE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = FRA modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SPR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = POR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = AUS modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ITA modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = BEL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = HOL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = LUX modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = GER modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = DEN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = NOR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SWE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = FIN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = POL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = EST modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = LAT modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = LIT modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = CZE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SLO modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = HUN modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ROM modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = BUL modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = CRO modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = TUR modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SWI modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = ICE modifier = Arabian_Peninsula_West_Economical_Relations }
-	reverse_add_opinion_modifier = { target = CHI modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	reverse_add_opinion_modifier = { target = KOR modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	reverse_add_opinion_modifier = { target = RAJ modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	reverse_add_opinion_modifier = { target = JAP modifier = Arabian_Peninsula_Asia_Economical_Relations }
-	reverse_add_opinion_modifier = { target = SOV modifier = Arabian_Peninsula_Russia_Economical_Relations }
-
-	#Influence system
-	init_influence = yes
-	set_variable = { domestic_influence_amount = 200 }
-	add_to_array = { influence_array = USA.id }
-	add_to_array = { influence_array_val = 74 }
-	add_to_array = { influence_array = ENG.id }
-	add_to_array = { influence_array_val = 16 }
-	add_to_array = { influence_array = FRA.id }
-	add_to_array = { influence_array_val = 7 }
-	add_to_array = { influence_array = SOV.id }
-	add_to_array = { influence_array_val = 7 }
-	add_to_array = { influence_array = CHI.id }
-	add_to_array = { influence_array_val = 5 }
-	add_to_array = { influence_array = SAU.id }
-	add_to_array = { influence_array_val = 37 }
-	add_to_array = { influence_array = QAT.id }
-	add_to_array = { influence_array_val = 22 }
-	startup_influence = yes
-
-	set_popularities = {
-		democratic = 41.0
-		communism = 13.0
-		fascism = 11.0
-		neutrality = 20.0
-		nationalist = 15.0
-	}
-	set_politics = {
-		ruling_party = democratic
-		last_election = "1932.11.8"
-		election_frequency = 48
-		elections_allowed = no
-	}
-
-	start_politics_input = yes
-
-	### Party Popularities
-	set_variable = { party_pop_array^0 = 0.31 } #Western_Autocracy
-	set_variable = { party_pop_array^1 = 0.0 } #conservatism
-	set_variable = { party_pop_array^2 = 0.06 } #liberalism
-	set_variable = { party_pop_array^3 = 0.04 } #socialism
-	set_variable = { party_pop_array^4 = 0 } #Communist-State
-	set_variable = { party_pop_array^5 = 0 } #anarchist_communism
-	set_variable = { party_pop_array^6 = 0 } #Conservative
-	set_variable = { party_pop_array^7 = 0 } #Autocracy
-	set_variable = { party_pop_array^8 = 0.11 } #Mod_Vilayat_e_Faqih
-	set_variable = { party_pop_array^9 = 0.02 } #Vilayat_e_Faqih
-	set_variable = { party_pop_array^10 = 0.1 } #Kingdom
-	set_variable = { party_pop_array^11 = 0.01 } #Caliphate
-	set_variable = { party_pop_array^12 = 0.1 } #Neutral_Muslim_Brotherhood
-	set_variable = { party_pop_array^13 = 0 } #Neutral_Autocracy
-	set_variable = { party_pop_array^14 = 0 } #Neutral_conservatism
-	set_variable = { party_pop_array^15 = 0 } #oligarchism
-	set_variable = { party_pop_array^16 = 0 } #Neutral_Libertarian
-	set_variable = { party_pop_array^17 = 0 } #Neutral_green
-	set_variable = { party_pop_array^18 = 0.1 } #neutral_Social
-	set_variable = { party_pop_array^19 = 0 } #Neutral_Communism
-	set_variable = { party_pop_array^20 = 0.15 } #Nat_Populism
-	set_variable = { party_pop_array^21 = 0 } #Nat_Fascism
-	set_variable = { party_pop_array^22 = 0 } #Nat_Autocracy
-	set_variable = { party_pop_array^23 = 0 } #Monarchist
-
-	### Ruling Party
-	add_to_array = { ruling_party = 0 }
-
-	startup_politics = yes
-
-	### Banned Parties & Balance
-	set_partyall_banned = yes
-	add_political_power = 300
-
-	create_country_leader = {
-		name = "Jaber Al-Ahmad Al-Sabah"
-		picture = "jaber_al_sabah.dds"
-		ideology = Western_Autocracy
-		traits = {
-			western_Western_Autocracy
-		}
-	}
-
-	recruit_character = KUW_mohammed_khadher
-	recruit_character = KUW_abdullah_sabah
-	recruit_character = KUW_khaled_sabah
-	recruit_character = KUW_mahmoud_dousari
-	recruit_character = KUW_khalid_kandari
-
-	# Relation Starting Configuration (moved from on_startup)
-	add_opinion_modifier = { target = CUB modifier = sanctions }
-	add_relation_modifier = { target = USA modifier = USA_World_Economical_Relations }
-	add_relation_modifier = { target = SOV modifier = SOV_World_Economical_Relations }
-	add_relation_modifier = { target = CHI modifier = CHI_World_Economical_Relations }
-	add_relation_modifier = { target = FRA modifier = FRA_World_Economical_Relations }
-	add_relation_modifier = { target = GER modifier = GER_World_Economical_Relations }
-	add_relation_modifier = { target = ENG modifier = ENG_World_Economical_Relations }
-	add_relation_modifier = { target = SPR modifier = SPR_World_Economical_Relations }
-	add_relation_modifier = { target = ITA modifier = ITA_World_Economical_Relations }
-	add_relation_modifier = { target = UKR modifier = UKR_World_Economical_Relations }
-	add_relation_modifier = { target = ISR modifier = ISR_World_Economical_Relations }
-	add_opinion_modifier = { target = TTP modifier = AlQaida_Are_Terrorists }
-	add_opinion_modifier = { target = TTP modifier = AlQaida_Are_Terrorists_Trade }
-	add_opinion_modifier = { target = TAL modifier = Taliban_Are_Terrorists }
-	add_opinion_modifier = { target = TAL modifier = Taliban_Are_Terrorists_Trade }
-	add_opinion_modifier = { target = ALG modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = BHR modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = COM modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = DJI modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = EGY modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = IRQ modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = JOR modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = KUW modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = LEB modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = LBA modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = MAU modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = MOR modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = OMA modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = PAL modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = QAT modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = SAU modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = SOM modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = SUD modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = SYR modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = TUN modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = UAE modifier = Arab_League_Relations }
-	add_opinion_modifier = { target = YEM modifier = Arab_League_Relations }
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1900.1.1"
+	election_frequency = 0
+	elections_allowed = no
 }
+
+set_popularities = {
+	democratic = 15
+	communism = 1
+	fascism = 1
+	neutrality = 83
+}
+
+# ── LEADER ────────────────────────────────────────────────────────────────────
+
+create_country_leader = {
+	name = "Emir Jaber Al-Ahmad Al-Sabah"
+	picture = "GFX_portrait_KUW_jaber_al_sabah"
+	# portrait: jaber_al_sabah.dds confirmed in gfx/leaders/KUW/
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		# DS_VERIFY: confirm ideology subtype valid in surviving ideologies
+	}
+}
+
+# ── MILITARY COMMANDERS ───────────────────────────────────────────────────────
+
+# Crown Prince / Prime Minister — Sheikh Saad Al-Abdullah Al-Sabah
+# Led the government in exile from Taif; coordinated with Coalition
+create_corps_commander = {
+	name = "Saad Al-Abdullah Al-Sabah"
+	picture = "GFX_portrait_KUW_Sabah_Al-Ahmad_Al-Jaber_Al-Sabah"
+	# portrait: Sabah_Al-Ahmad_Al-Jaber_Al-Sabah.dds confirmed in gfx/leaders/KUW/
+	# DS_VERIFY: this is actually Sabah Al-Ahmad — confirm correct usage
+	traits = { }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+# Kuwaiti Armed Forces — Brigadier Mubarak Al-Abdullah Al-Jaber
+# Commanded Kuwaiti forces that escaped the invasion and fought with Coalition
+create_corps_commander = {
+	name = "Mubarak Al-Abdullah Al-Jaber"
+	picture = "GFX_portrait_generic_land_generic"
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+# ── TECHNOLOGY ────────────────────────────────────────────────────────────────
+# Minimal — most equipment captured or destroyed in the invasion
+# Only what escaped with Kuwaiti forces
+
+set_technology = {
+
+	# Armor — Chieftain Mk5 (some escaped), Vickers Mk1
+	MBT_1 = 1
+	MBT_2 = 1
+	APC_1 = 1
+	APC_2 = 1
+
+	# Infantry — weapons that escaped with exile forces
+	infantry_weapons_1 = 1
+	infantry_weapons_2 = 1
+	support_weapons = 1
+	util_vehicle_1 = 1
+
+	# Air — A-4 Skyhawk, Mirage F1 (some escaped to Saudi Arabia/Bahrain)
+	# DS_NOTE: Kuwaiti Air Force flew from exile bases throughout the war
+	early_fighter = 1
+	AS_Fighter1 = 1
+	Strike_fighter1 = 1
+	cas1 = 1
+
+	# Land Doctrine
+	combined_arms = 1
+
+	# Engineering baseline
+	basic_computing = 1
+	radar = 1
+
+}
+
+# ── IDEAS ─────────────────────────────────────────────────────────────────────
+
+set_country_flag = KUW_government_in_exile
+# This flag is checked by Coalition events and diplomatic decisions
+# It is removed when Kuwait is liberated and state 172 returns to KUW
+
+add_ideas = {
+
+	# DS_CREATE: KUW_government_in_exile
+	# Source: Emir fled to Taif, Saudi Arabia on August 2 1990
+	# modifier = {
+	#     stability_factor = -0.50
+	#     political_power_gain = -0.25
+	#     production_speed_buildings_factor = -0.80
+	#     manpower_factor = -0.50
+	# }
+	# duration = -1 (remove when state 172 returns to KUW ownership)
+
+	# DS_CREATE: KUW_resistance_movement
+	# Source: Kuwaiti resistance operated inside occupied Kuwait throughout
+	# the 7-month occupation; intelligence gathering, sabotage, hiding POWs
+	# modifier = {
+	#     resistance_target = 0.20
+	#     # DS_VERIFY: confirm resistance_target is valid modifier in this version
+	# }
+	# duration = -1
+
+	# DS_CREATE: KUW_oil_fund_war_chest
+	# Source: Kuwait Investment Authority — $100 billion sovereign wealth fund
+	# financed the entire cost of Kuwait's liberation effort from exile
+	# modifier = {
+	#     consumer_goods_factor = -0.30
+	#     # Represents SWF assets funding the war effort despite no production
+	# }
+	# duration = -1
+
+}
+
+# ── OOB & NOTES ───────────────────────────────────────────────────────────────
+
+set_oob = "KUW_1990"
+# DS_OOB: see history/units/KUW_1990.txt — to be created in OOB pass
+# Kuwaiti forces at game start (escaped the invasion):
+#   Land: ~7,000 troops; 2 brigades (severely understrength)
+#         Al-Fatah Brigade, 15th Brigade (reformed in exile)
+#   Air:  ~15 A-4 Skyhawks (Dhahran), ~12 Mirage F1 (Bahrain)
+#         Operated as part of Arab Coalition air component
+#   Naval: 8 fast attack craft escaped to Bahrain
+
+# DS_NOTE: State 172 (Kuwait) must be transferred to IRQ ownership
+# in the bookmark start script via:
+#   KUW = { transfer_state = 172 }  — NO, this gives to KUW
+#   IRQ = { 172 = { add_core = IRQ  } }
+#   transfer_state to IRQ in bookmark effect
+# Kuwait retains the CORE on state 172 — liberation removes IRQ control
+
+# DS_NOTE: Liberation trigger — when IRQ loses control of state 172,
+# fire event: KUW gains stability, remove KUW_government_in_exile flag
+# and idea, add KUW_liberation_euphoria idea (temporary war support boost)
+
+# DS_NOTE: Kuwait's small military means it fights as part of the
+# Arab Coalition task force under Saudi/US command, not independently
+# Model this via subject or alliance mechanics rather than autonomous AI
