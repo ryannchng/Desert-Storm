@@ -48,8 +48,22 @@ create_country_leader = {
 
 # ── MILITARY COMMANDERS ───────────────────────────────────────────────────────
 
-# Chief of Staff — General Ali Aslan
-# Syrian Armed Forces Chief of Staff during Gulf War
+# Chief of Staff — General Hikmat al-Shihabi
+# Syrian Armed Forces Chief of Staff during the Gulf War
+create_corps_commander = {
+	name = "Hikmat al-Shihabi"
+	picture = "GFX_portrait_generic_land_generic"
+	# DS_VERIFY: no confirmed Hikmat al-Shihabi portrait in gfx/leaders/SYR/
+	traits = { }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+
+# Assistant Chief of Staff — General Ali Aslan
+# Senior operational commander during the Gulf War period
 create_corps_commander = {
 	name = "Ali Aslan"
 	picture = "GFX_portrait_SYR_Ali_Aslan"

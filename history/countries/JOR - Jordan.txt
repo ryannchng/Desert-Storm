@@ -65,7 +65,7 @@ create_corps_commander = {
 }
 
 # ── TECHNOLOGY ────────────────────────────────────────────────────────────────
-# Jordanian 1990 force — M60A3, Chieftain Mk5, F-16A, Mirage F1
+# Jordanian 1990 force — M60A3, Chieftain Mk5, Mirage F1, F-5E/F
 
 set_technology = {
 
@@ -120,12 +120,10 @@ set_technology = {
 	Anti_tank_1 = 1
 	AT_upgrade_1 = 1
 
-	# Air — F-16A Fighting Falcon, Mirage F1, F-5E Tiger
+	# Air — Mirage F1CJ/EJ/BJ, F-5E/F Tiger II
 	early_fighter = 1
 	AS_Fighter1 = 1
-	AS_Fighter2 = 1
 	MR_Fighter1 = 1
-	Strike_fighter1 = 1
 
 	# Naval — minimal; 3 Al Hussein FAC (Red Sea)
 	patrol_boat_hull_1_tech = 1
@@ -185,7 +183,7 @@ set_oob = "JOR_1990"
 # Jordanian Armed Forces 1990:
 #   Land: 2 armoured brigades, 2 mechanized brigades, 1 infantry brigade
 #         ~100,000 total military (active + reserve)
-#   Air:  2 F-16 squadrons, 2 Mirage F1 squadrons, F-5 (training/reserve)
+#   Air:  2 Mirage F1 squadrons, 2 F-5 squadrons
 #   Naval: minimal Red Sea patrol force
 
 # DS_NOTE: Jordan's neutrality created real friction with the Coalition

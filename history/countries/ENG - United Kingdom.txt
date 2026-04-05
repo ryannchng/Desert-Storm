@@ -196,8 +196,8 @@ set_technology = {
 	naval_plane1 = 1
 	naval_plane2 = 1
 
-	# Naval — Type 42 destroyers, Type 22 frigates, Upholder submarines,
-	#          HMS Ark Royal (Invincible-class carrier), Hunt-class MCM
+	# Naval — Type 42 destroyers, Type 22 frigates, Trafalgar-class SSN,
+	#          Hunt-class MCM
 	patrol_boat_hull_1_tech = 1
 	frigate_hull_1 = 1
 	frigate_hull_2 = 1
@@ -272,8 +272,9 @@ set_oob = "ENG_1990"
 #   Air:  Tornado GR1 strike wing (Dhahran/Tabuk)
 #         Tornado F3 air defence (Dhahran)
 #         Jaguar recce/CAS (Bahrain)
-#   Naval: Armilla Patrol — Type 42 destroyers, Type 22 frigates
-#          HMS Ark Royal carrier group
+#   Naval: Armilla Patrol surface group — Type 42 destroyers,
+#          Type 22 frigates, mine countermeasures vessels
+#          supported by Trafalgar-class submarines offshore
 
 # DS_NOTE: Thatcher resignation event must fire 1990.11.22
 # Replace Margaret Thatcher leader with John Major

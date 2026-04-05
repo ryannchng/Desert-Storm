@@ -240,7 +240,8 @@ add_ideas = {
 	# duration = -1 (remove via focus when France fully commits to Coalition)
 
 	# DS_CREATE: FRA_daguet_expeditionary
-	# Source: Opération Daguet — France deployed ~12,000 troops to Saudi Arabia
+	# Source: Opération Daguet — France deployed ~12,000 ground troops to Saudi Arabia
+	# with ~18,000 total theater personnel including air and naval components
 	# on the far western flank protecting the Coalition's left shoulder
 	# modifier = {
 	#     land_attack_factor = 0.05
@@ -257,7 +258,8 @@ set_oob = "FRA_1990"
 # French force structure Gulf contribution (Opération Daguet):
 #   Land: 6th Light Armoured Division (Daguet)
 #         AMX-30B2 tanks, AMX-10RC recce, VAB infantry
-#         ~12,000 troops; operated on far western flank
+#         ~12,000 ground troops; ~18,000 total theater including air and naval
+#         operated on far western flank
 #         attached US 82nd Airborne on their left
 #   Air:  Jaguar wing (Al Ahsa), Mirage F1CR (recce)
 #         Mirage 2000 air defence (Doha)

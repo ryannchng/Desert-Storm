@@ -162,8 +162,9 @@ add_ideas = {
 set_oob = "KUW_1990"
 # DS_OOB: see history/units/KUW_1990.txt — to be created in OOB pass
 # Kuwaiti forces at game start (escaped the invasion):
-#   Land: ~7,000 troops; 2 brigades (severely understrength)
-#         Al-Fatah Brigade, 15th Brigade (reformed in exile)
+#   Land: ~10,000-12,000 troops; 3-4 brigades reformed in exile
+#         Al-Fatah Brigade, 15th Brigade, and regrouped surviving elements
+#         Most Centurion tanks were captured in Kuwait and did not join the exile force
 #   Air:  ~15 A-4 Skyhawks (Dhahran), ~12 Mirage F1 (Bahrain)
 #         Operated as part of Arab Coalition air component
 #   Naval: 8 fast attack craft escaped to Bahrain

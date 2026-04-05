@@ -135,7 +135,7 @@ set_technology = {
 	SAM = 1
 	SAM0 = 1
 
-	# Anti-Tank — TOW-2, Dragon, Swingfire (British supplied)
+	# Anti-Tank — TOW-2, Dragon, Swingfire (locally produced under British license)
 	Anti_tank_0 = 1
 	Anti_tank_1 = 1
 	Anti_tank_2 = 1
