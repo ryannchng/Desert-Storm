@@ -40,7 +40,7 @@ create_country_leader = {
 	picture = "GFX_portrait_generic_leader_western"
 	# DS_VERIFY: no Mitterrand portrait in gfx/leaders/FRA/
 	# Replace with accurate portrait when assets added
-	expire = "1965.1.1"
+	expire = "1995.5.17"
 	ideology = socialism
 	traits = {
 		# DS_VERIFY: confirm ideology subtype valid in surviving ideologies
@@ -61,6 +61,7 @@ create_corps_commander = {
 	defense_skill = 2
 	planning_skill = 3
 	logistics_skill = 3
+	expire = "2050.1.1"
 }
 
 # Daguet Division — General Jean-Charles Mouscardès
@@ -74,20 +75,22 @@ create_corps_commander = {
 	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
-# French Air Force — General Jean-Pierre Job
-# Commanded French air assets in theater
 create_corps_commander = {
-	name = "Jean-Pierre Job"
-	picture = "GFX_portrait_FRA_Jean_Pierre_Job"
-	# portrait: Jean_Pierre_Job.dds confirmed in gfx/leaders/FRA/
+	name = "Jean-Pierre Fougier"
+	picture = "GFX_portrait_generic_land_generic"
+	# DS_VERIFY: confirm French tactical air commander for Daguet 1990-91
+	# Jean-Pierre Job's confirmed role in 1990-91 is unclear from sources
+	# Using placeholder — replace with confirmed name when verified
 	traits = { }
-	skill = 3
-	attack_skill = 3
+	skill = 2
+	attack_skill = 2
 	defense_skill = 2
 	planning_skill = 3
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
 # ── TECHNOLOGY ────────────────────────────────────────────────────────────────
@@ -178,8 +181,9 @@ set_technology = {
 	cas1 = 1
 	naval_plane1 = 1
 
-	# Naval — Clemenceau carrier, Georges Leygues frigates, Rubis submarines,
-	#          La Fayette frigates (entering service 1990)
+	# La Fayette-class laid down December 1990, commissioned 1996
+	# NOT in service at Desert Storm — removed from 1990 baseline
+	# Clemenceau carrier, Georges Leygues F70 frigates, Rubis SSN
 	patrol_boat_hull_1_tech = 1
 	frigate_hull_1 = 1
 	frigate_hull_2 = 1

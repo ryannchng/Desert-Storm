@@ -36,7 +36,7 @@ create_country_leader = {
 	name = "Saddam Hussein"
 	picture = "GFX_portrait_IRQ_saddam_hussein"
 	# portrait: saddam_hussein.dds confirmed in gfx/leaders/IRQ/
-	expire = "1965.1.1"
+	expire = "2006.1.1"
 	ideology = despotism
 	traits = {
 		war_industrialist
@@ -59,6 +59,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 3
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
 # Republican Guard Commander — General Iyad Futayyih Khalifa al-Rawi
@@ -73,6 +74,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 2
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
 # III Corps Commander — General Salah Aboud Mahmoud
@@ -86,6 +88,7 @@ create_corps_commander = {
 	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
 # Republican Guard Division — General Maher Abd al-Rashid
@@ -100,20 +103,22 @@ create_corps_commander = {
 	defense_skill = 2
 	planning_skill = 3
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
-# Air Force — General Hamid Raja Shalah
-# Commander Iraqi Air Force 1990
+# Air Defences — General Muzahim Sa'b Hassan al-Tikriti
 create_corps_commander = {
-	name = "Hamid Raja Shalah"
-	picture = "GFX_portrait_IRQ_Hamid_Raja_Shalah"
-	# portrait: Hamid_Raja_Shalah.dds confirmed in gfx/leaders/IRQ/
+	name = "Muzahim Sa'b Hassan al-Tikriti"
+	picture = "GFX_portrait_generic_land_generic"
+	# Commander Iraqi Air Defences 1990; confirmed in-post during Gulf War
+	# DS_VERIFY: confirm spelling variant in sources
 	traits = { }
 	skill = 2
 	attack_skill = 1
 	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
 # ── TECHNOLOGY ────────────────────────────────────────────────────────────────
@@ -199,7 +204,6 @@ set_technology = {
 
 	# Ballistic Missiles — SCUD-B (R-17), Al Hussein (extended range mod)
 	ballistic_missile = 1
-	IRBM = 1
 	TEL_launched_missiles = 1
 	TEL_3 = 1
 	TEL_4 = 1

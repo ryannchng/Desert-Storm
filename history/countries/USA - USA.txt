@@ -38,8 +38,8 @@ create_country_leader = {
 	picture = "GFX_portrait_generic_leader_western"
 	# DS_VERIFY: no GHW Bush portrait found in gfx/leaders/USA/
 	# Replace with accurate portrait when assets added
-	expire = "1965.1.1"
-	ideology = liberalism
+	expire = "1993.1.20"
+	ideology = conservatism
 	traits = {
 		# DS_VERIFY: confirm ideology subtype valid in surviving ideologies
 	}
@@ -59,21 +59,14 @@ create_corps_commander = {
 	defense_skill = 4
 	planning_skill = 4
 	logistics_skill = 4
+	expire = "2050.1.1"
 }
 
-# Chairman Joint Chiefs — General Colin Powell
-# Principal military advisor; shaped Desert Shield/Storm strategy
-create_corps_commander = {
-	name = "Colin Powell"
-	picture = "GFX_portrait_USA_Colin_Powell"
-	# portrait: Colin_Powell.dds confirmed in gfx/leaders/USA/
-	traits = { }
-	skill = 4
-	attack_skill = 2
-	defense_skill = 4
-	planning_skill = 4
-	logistics_skill = 4
-}
+# DS_NOTE: Colin Powell (Chairman JCS) — add as political/military
+# advisor in the advisor pass, not as a field commander
+# portrait: Colin_Powell.dds confirmed in gfx/leaders/USA/
+# Suggested advisor role: military_theorist or army_chief
+# modifier: planning_speed, army_org
 
 # VII Corps Commander — General Frederick Franks
 # Commanded the main armored thrust — the Left Hook
@@ -87,6 +80,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 4
 	logistics_skill = 3
+	expire = "2050.1.1"
 }
 
 # XVIII Airborne Corps — General Gary Luck
@@ -100,6 +94,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 3
 	logistics_skill = 3
+	expire = "2050.1.1"
 }
 
 # I Marine Expeditionary Force — General Walter Boomer
@@ -113,19 +108,24 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 3
 	logistics_skill = 3
+	expire = "2050.1.1"
 }
 
-# Air Campaign — General Chuck Horner
-# Planned and commanded the 38-day air campaign (JFACC)
 create_corps_commander = {
 	name = "Chuck Horner"
 	picture = "GFX_portrait_generic_land_generic"
+	# JFACC — commanded all Coalition air assets during Desert Storm
+	# Planned the 38-day air campaign; primarily an air war role
+	# DS_NOTE: HOI4 does not have a separate air commander slot in the
+	# same way as land commanders; keeping as corps commander is a
+	# mechanical compromise — adjust skill profile to reflect air focus
 	traits = { }
 	skill = 4
-	attack_skill = 4
+	attack_skill = 2
 	defense_skill = 3
 	planning_skill = 4
 	logistics_skill = 3
+	expire = "2050.1.1"
 }
 
 # ── TECHNOLOGY ────────────────────────────────────────────────────────────────

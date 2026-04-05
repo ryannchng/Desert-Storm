@@ -39,7 +39,7 @@ create_country_leader = {
 	name = "King Fahd bin Abdulaziz Al-Saud"
 	picture = "GFX_portrait_SAU_Fahd_bin_Abdulaziz_Al-Saud"
 	# portrait: Fahd_bin_Abdulaziz_Al-Saud.dds confirmed in gfx/leaders/SAU/
-	expire = "1965.1.1"
+	expire = "2005.8.1"
 	ideology = despotism
 	traits = {
 		# DS_VERIFY: confirm ideology subtype valid in surviving ideologies
@@ -62,6 +62,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 3
 	logistics_skill = 3
+	expire = "2050.1.1"
 }
 
 # Saudi Land Forces Commander — General Yousef bin Ali Al-Aloushan
@@ -75,6 +76,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 2
 	logistics_skill = 3
+	expire = "2050.1.1"
 }
 
 # Royal Saudi Air Force — General Ahmad Al-Behery
@@ -88,6 +90,7 @@ create_corps_commander = {
 	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
 # Prince Bandar bin Sultan — Saudi Ambassador Washington / Coalition diplomat
@@ -98,11 +101,12 @@ create_corps_commander = {
 
 # ── TECHNOLOGY ────────────────────────────────────────────────────────────────
 # All IDs verified against surviving common/technologies/ files
-# Saudi 1990 force — M1A2 (on order), M60A3, AMX-30, F-15C/D, Tornado
+# Saudi 1990 force — M60A3, AMX-30S, F-15C/D, Tornado
 
 set_technology = {
 
 	# Armor — M60A3, AMX-30S, M113, LAV-25 (Saudi National Guard)
+	# M1A2 deliveries began 1992-95 post-war — not in 1990 baseline
 	MBT_1 = 1
 	MBT_2 = 1
 	MBT_3 = 1

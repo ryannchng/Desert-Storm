@@ -43,7 +43,7 @@ create_country_leader = {
 	name = "Emir Jaber Al-Ahmad Al-Sabah"
 	picture = "GFX_portrait_KUW_jaber_al_sabah"
 	# portrait: jaber_al_sabah.dds confirmed in gfx/leaders/KUW/
-	expire = "1965.1.1"
+	expire = "2006.1.15"
 	ideology = despotism
 	traits = {
 		# DS_VERIFY: confirm ideology subtype valid in surviving ideologies
@@ -56,28 +56,33 @@ create_country_leader = {
 # Led the government in exile from Taif; coordinated with Coalition
 create_corps_commander = {
 	name = "Saad Al-Abdullah Al-Sabah"
-	picture = "GFX_portrait_KUW_Sabah_Al-Ahmad_Al-Jaber_Al-Sabah"
-	# portrait: Sabah_Al-Ahmad_Al-Jaber_Al-Sabah.dds confirmed in gfx/leaders/KUW/
-	# DS_VERIFY: this is actually Sabah Al-Ahmad — confirm correct usage
+	picture = "GFX_portrait_generic_land_generic"
+	# DS_VERIFY: Sabah_Al-Ahmad_Al-Jaber_Al-Sabah.dds is the Crown Prince
+	# who became Emir in 2006 — different person from PM Saad Al-Abdullah
+	# No confirmed Saad Al-Abdullah portrait in gfx/leaders/KUW/
+	# Replace with accurate portrait when assets are added
 	traits = { }
 	skill = 2
 	attack_skill = 1
 	defense_skill = 2
 	planning_skill = 2
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
-# Kuwaiti Armed Forces — Brigadier Mubarak Al-Abdullah Al-Jaber
-# Commanded Kuwaiti forces that escaped the invasion and fought with Coalition
 create_corps_commander = {
-	name = "Mubarak Al-Abdullah Al-Jaber"
+	name = "Jaber Al-Khalid Al-Sabah"
 	picture = "GFX_portrait_generic_land_generic"
+	# Commander of Kuwaiti ground forces that escaped the invasion
+	# DS_VERIFY: confirm Jaber Al-Khalid Al-Sabah was senior ground
+	# commander for escaped Kuwaiti forces in Saudi Arabia
 	traits = { }
 	skill = 2
 	attack_skill = 2
 	defense_skill = 1
 	planning_skill = 2
 	logistics_skill = 2
+	expire = "2050.1.1"
 }
 
 # ── TECHNOLOGY ────────────────────────────────────────────────────────────────
