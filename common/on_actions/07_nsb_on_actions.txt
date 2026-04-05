@@ -468,15 +468,6 @@ on_actions = {
 					add_to_array = { ROOT.COM_volunteer_nations = FROM.id }
 				}
 			}
-			if = {
-				limit = { ROOT = { original_tag = LBA } }
-				if = {
-					limit = {
-						NOT = { is_in_array = { ROOT.LBA_volunteer_nations = FROM.id } }
-					}
-					add_to_array = { ROOT.LBA_volunteer_nations = FROM.id }
-				}
-			}
 		}
 	}
 

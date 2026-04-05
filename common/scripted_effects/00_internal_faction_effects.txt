@@ -1501,20 +1501,6 @@ change_farmers_opinion = {
 		set_temp_variable = { max_opinion = 100 }
 
 
-		if = { limit = { original_tag = BRA }
-			if = { limit = { has_idea = BRA_idea_pro_farmers }
-				add_to_temp_variable = { min_opinion = 5 }
-			}
-			if = { limit = { has_idea = BRA_idea_pro_farmers_2 }
-				add_to_temp_variable = { min_opinion = 10 }
-			}
-		}
-		if = {
-			limit = { original_tag = COM }
-			if = { limit = { has_idea = COM_pro_farmers_idea }
-				add_to_temp_variable = { farmers_min = 5 }
-			}
-		}
 
 		set_temp_variable = { farmers_min = min_opinion }
 		set_temp_variable = { farmers_max = max_opinion }
@@ -1550,17 +1536,6 @@ change_landowners_opinion = {
 		#	limit = { tag = TAG }
 		# 	add_to_temp_variable = { min_opinion = x }
 		# }
-		if = { limit = { tag = SPR }
-			if = { limit = { has_idea = SPR_the_hands_of_the_few_idea }
-				add_to_temp_variable = { min_opinion = 15 }
-			}
-		}
-		if = {
-			limit = { tag = SIN }
-			if = { limit = { has_idea = SIN_support_for_the_business }
-				add_to_temp_variable = { min_opinion = 10 }
-			}
-		}
 
 		set_temp_variable = { landowners_min = min_opinion }
 		set_temp_variable = { landowners_max = max_opinion }
@@ -1596,33 +1571,6 @@ change_labour_unions_opinion = {
 		#	limit = { tag = TAG }
 		# 	add_to_temp_variable = { min_opinion = x }
 		# }
-		if = { limit = { tag = SPR }
-			if = { limit = { has_idea = SPR_unionization_of_faith_idea }
-				add_to_temp_variable = { min_opinion = 15 }
-			}
-		}
-		if = {
-			limit = { tag = SIN }
-			if = { limit = { has_idea = SIN_support_for_the_workers }
-				add_to_temp_variable = { min_opinion = 10 }
-			}
-		}
-		if = {
-			limit = { tag = DEN }
-			if = { limit = { has_idea = DEN_in_need_of_banking_reforms_idea }
-				add_to_temp_variable = { max_opinion = -15 }
-			}
-			if = { limit = { has_idea = DEN_intensify_the_flexicurity_idea }
-				add_to_temp_variable = { min_opinion = 10 }
-			}
-		}
-		if = {
-			limit = { tag = BRA }
-			if = {
-				limit = { has_idea = BRA_idea_pro_unions }
-				add_to_temp_variable = { min_opinion = 15 }
-			}
-		}
 
 		set_temp_variable = { labour_unions_min = min_opinion }
 		set_temp_variable = { labour_unions_max = max_opinion }

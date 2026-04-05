@@ -1542,9 +1542,6 @@ country_event = {
 			target = IRQ
 			type = puppet_wargoal_focus
 		}
-		hidden_effect = {
-			IRQ_MNF_setup = yes
-		}
 		KUR = {
 			country_event = {
 				id = iraq_md.91
@@ -1673,7 +1670,6 @@ country_event = {
 			type = puppet_wargoal_focus
 		}
 		hidden_effect = {
-			IRQ_MNF_setup = yes
 			KUR = {
 				country_event = {
 					id = iraq_md.91

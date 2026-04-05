@@ -3051,47 +3051,7 @@ country_event = {
 	}
 
 	#Jeans Revolution
-	country_event = {
-		id = belarus_another.52
-		title = belarus_another.52.t
-		desc = belarus_another.52.d
-		picture = GFX_belarus_jeans_revolution
-		is_triggered_only = yes
-		fire_only_once = yes
-		option = { # Shiiiiiiet
-			name = belarus_another.52.a
-			log = "[GetDateText]: [This.GetName]: belarus_another.52.a executed"
-			trigger = {
-				has_completed_focus = BLR_occupation_management_strategies
-			}
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.09
-			}
-			add_popularity = {
-				ideology = nationalist
-				popularity = 0.09
-			}
-			ai_chance = {
-				base = 100
-			}
-		}
-		option = {
-			name = belarus_another.52.b
-			log = "[GetDateText]: [This.GetName]:belarus_another.52.b executed"
-			trigger = {
-				NOT = {
-					has_completed_focus = BLR_occupation_management_strategies
-				}
-			}
-			hidden_effect = {
-				SOV = { country_event = { id = belarus_another.55 days = 10 } }
-			}
-			ai_chance = {
-				base = 1
-			}
-		}
-	}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/belarus.txt during Desert Storm pruning
 	country_event = {
 		id = belarus_another.53
 		title = belarus_another.53.t

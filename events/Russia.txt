@@ -400,107 +400,13 @@ country_event = {
 
 #Demand Belarus' Annexation/Puppeting
 country_event = {
-	id = russia.10
-	title = {
-		trigger = { BLR = { is_subject_of = SOV } }
-		text = russia.10.t1
-	}
-	title = {
-		trigger = { BLR = { NOT = { is_subject_of = SOV } } }
-		text = russia.10.t2
-	}
-	desc = {
-		trigger = { BLR = { is_subject_of = SOV } }
-		text = russia.10.d1
-	}
-	desc = {
-		trigger = { BLR = { NOT = { is_subject_of = SOV } } }
-		text = russia.10.d2
-	}
-	picture = GFX_SOV_generic
+    id = russia.10
+    is_triggered_only = yes
 
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = russia.10.o1
-		log = "[GetDateText]: [This.GetName]: russia.10.o1 executed"
-		if = {
-			limit = { BLR = { is_subject_of = SOV } }
-			effect_tooltip = {
-				BLR = {
-					every_owned_state = {
-						add_core_of = SOV
-					}
-				}
-				annex_country = { target = BLR transfer_troops = yes }
-			}
-		}
-		if = {
-			limit = { BLR = { NOT = { is_subject_of = SOV } } }
-			effect_tooltip = {
-				BLR = {
-					every_owned_state = {
-						add_core_of = SOV
-					}
-				}
-				SOV = { puppet = BLR }
-			}
-		}
-		SOV = {
-			country_event = { id = russia.3 days = 1 }
-		}
-
-		ai_chance = {
-			base = 75
-		}
-	}
-
-	#Belarus Refuses!
-	option = {
-		name = russia.10.o2
-		log = "[GetDateText]: [This.GetName]: russia.10.o2 executed"
-		if = {
-			limit = { BLR = { is_subject_of = SOV } }
-			SOV = { release_puppet = BLR }
-			BLR = {
-				every_owned_state = {
-					add_core_of = SOV
-				}
-			}
-			SOV = {
-				set_temp_variable = { wargoal_on = BLR }
-				add_threat_from_wargoal_effect = yes
-				create_wargoal = {
-					target = BLR
-					type = take_state_focus
-				}
-			}
-		}
-		if = {
-			limit = { BLR = { NOT = { is_subject_of = SOV } } }
-			BLR = {
-				every_owned_state = {
-					add_core_of = SOV
-				}
-			}
-			SOV = {
-				set_temp_variable = { wargoal_on = BLR }
-				set_temp_variable = { wargoal_type = 2 }
-				add_threat_from_wargoal_effect = yes
-				create_wargoal = {
-					target = BLR
-					type = annex_everything
-				}
-			}
-		}
-		SOV = { add_opinion_modifier = { target = BLR modifier = betrayed_our_cause } }
-		SOV = { country_event = { id = russia.4 days = 1 } }
-
-		ai_chance = {
-			base = 25
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = russia.10.o1
+    }
 }
 
 ##Annex Abkhazia and South Ossetia!
@@ -4084,112 +3990,13 @@ country_event = {
 }
 #Minks Governorate
 country_event = {
-	id = russia_governorate.16
-	title = russia_governorate.16.t
-	desc = russia_governorate.16.d
-	picture = GFX_sov_empire_governorates
-	is_triggered_only = yes
-	fire_only_once = yes
+    id = russia_governorate.16
+    is_triggered_only = yes
 
-	option = {
-		name = russia_governorate.16.o1
-		log = "[GetDateText]: [This.GetName]: russia_governorate.16.o1 executed"
-		ai_chance = {
-			base = 5
-			modifier = {
-				has_government = nationalist
-				add = 90
-			}
-			modifier = {
-				BLR = {
-					is_subject_of = SOV
-				}
-				add = 90
-			}
-		}
-		SOV = {
-			country_event = { id = russia_governorate.17 }
-		}
-		BLR = {
-			set_country_flag = SOV_subject_agree
-			set_country_flag = SOV_subject_governorate
-			set_cosmetic_tag = GOV_BLR
-			clr_country_flag = dynamic_flag
-			SOV = {
-				set_autonomy = {
-					target = BLR
-					autonomy_state = autonomy_governorate_rf
-				}
-			}
-			every_core_state = { add_core_of = SOV }
-			if = {
-				limit = { NOT = { is_in_array = { ruling_party = 23 } } }
-				set_temp_variable = { rul_party_temp = 23 }
-				set_temp_variable = { disable_elections = 1 }
-				change_ruling_party_effect = yes
-			}
-			set_temp_variable = { party_index = 23 }
-			set_temp_variable = { party_popularity_increase = 0.10 }
-			set_temp_variable = { temp_outlook_increase = 0.10 }
-			add_relative_party_popularity = yes
-			create_country_leader = {
-				name = "Alexander Lukashenko"
-				picture = "governer_lukashenko.dds"
-				ideology = Monarchist
-				traits = {
-					nationalist_Monarchist
-				}
-			}
-		}
-	}
-
-	option = {
-		name = russia_governorate.16.o2
-		log = "[GetDateText]: [This.GetName]: russia_governorate.16.o2 executed"
-		ai_chance = {
-			base = 5
-			modifier = {
-				has_government = democratic
-				add = 90
-			}
-			modifier = {
-				has_government = communism
-				add = 90
-			}
-			modifier = {
-				has_government = neutrality
-				add = 90
-			}
-		}
-		SOV = { add_opinion_modifier = { target = BLR modifier = betrayed_our_cause } }
-		SOV = { country_event = { id = russia_governorate.18 } }
-	}
-
-	option = {
-		name = russia_governorate.16.o3
-		log = "[GetDateText]: [This.GetName]: russia_governorate.16.o3 executed"
-		trigger = {
-			NOT = {
-				has_autonomy_state = autonomy_union_state
-			}
-		}
-		ai_chance = {
-			base = 5
-			modifier = {
-				has_government = nationalist
-				add = 90
-			}
-			modifier = {
-				emerging_reactionaries_are_in_power = yes
-				add = 90
-			}
-			modifier = {
-				has_government = neutrality
-				add = 90
-			}
-		}
-		SOV = { country_event = { id = russia_governorate.19 } }
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = russia_governorate.16.o1
+    }
 }
 
 #They accept!
@@ -4348,103 +4155,13 @@ country_event = {
 
 #Armenia Governorate
 country_event = {
-	id = russia_governorate.20
-	title = russia_governorate.20.t
-	desc = russia_governorate.20.d
-	picture = GFX_sov_empire_governorates
-	is_triggered_only = yes
-	fire_only_once = yes
+    id = russia_governorate.20
+    is_triggered_only = yes
 
-	option = {
-		name = russia_governorate.20.o1
-		log = "[GetDateText]: [This.GetName]: russia_governorate.20.o1 executed"
-		ai_chance = {
-			base = 50
-			modifier = {
-				has_government = democratic
-				add = -50
-			}
-			modifier = {
-				ARM = {
-					is_subject_of = SOV
-				}
-				add = 50
-			}
-			modifier = {
-				ARM = {
-					is_subject = yes
-					NOT = {
-						is_subject_of = SOV
-					}
-				}
-				add = -90
-			}
-		}
-		SOV = {
-			country_event = { id = russia_governorate.21 }
-		}
-		if = {
-			limit = {
-				NKR = { is_subject_of = ARM }
-			}
-			ARM = { country_event = { id = russia_governorate.24 } }
-		}
-		ARM = {
-			set_country_flag = SOV_subject_agree
-			set_country_flag = SOV_subject_governorate
-			SOV = {
-				set_autonomy = {
-					target = ARM
-					autonomy_state = autonomy_governorate_rf
-				}
-			}
-		}
-	}
-
-	option = {
-		name = russia_governorate.20.o2
-		log = "[GetDateText]: [This.GetName]: russia_governorate.20.o2 executed"
-		ai_chance = {
-			base = 0
-			modifier = {
-				has_government = democratic
-				add = 90
-			}
-		}
-		SOV = { add_opinion_modifier = { target = ARM modifier = betrayed_our_cause } }
-		SOV = { country_event = { id = russia_governorate.22 } }
-	}
-
-	option = {
-		name = russia_governorate.20.o3
-		log = "[GetDateText]: [This.GetName]: russia_governorate.20.o3 executed"
-		trigger = {
-			NOT = {
-				has_autonomy_state = autonomy_union_state
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				SOV = { is_ai = no }
-				add = 50
-			}
-			modifier = {
-				has_government = democratic
-				add = -50
-			}
-			modifier = {
-				ARM = {
-					is_subject = yes
-					NOT = {
-						is_subject_of = SOV
-					}
-				}
-				add = -90
-			}
-		}
-		SOV = { country_event = { id = russia_governorate.23 } }
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = russia_governorate.20.o1
+    }
 }
 
 #They accept!
@@ -4508,71 +4225,13 @@ country_event = {
 
 #They Union state
 country_event = {
-	id = russia_governorate.23
-	title = russia_governorate.23.t
-	desc = russia_governorate.23.d
-	picture = GFX_union_state_more
+    id = russia_governorate.23
+    is_triggered_only = yes
 
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = russia_governorate.23.o1
-		log = "[GetDateText]: [This.GetName]: russia_governorate.23.o1 executed"
-		ai_chance = {
-			base = 100
-		}
-		if = {
-			limit = {
-				NKR = { is_subject_of = ARM }
-			}
-			ARM = { country_event = { id = russia_governorate.24 } }
-		}
-		ARM = { set_country_flag = USR_armenia_create_union_state }
-		SOV = {
-			set_autonomy = {
-				target = ARM
-				autonomy_state = autonomy_union_state
-			}
-		}
-		hidden_effect = {
-			ARM = {
-				add_ideas = USR_union_state_idea
-				add_ideas = USR_valute_idea
-				add_ideas = USR_civils_idea
-				add_ideas = USR_economic_space_idea
-				add_ideas = USR_eternal_commitie_idea
-				add_ideas = USR_money_palata_idea
-				add_ideas = USR_council_ministers_idea
-				add_ideas = USR_gos_sovet_idea
-				add_ideas = USR_parlament_idea
-			}
-		}
-	}
-	option = {
-		name = russia_governorate.23.o2
-		log = "[GetDateText]: [This.GetName]: russia_governorate.23.o2 executed"
-		ai_chance = {
-			base = 0
-		}
-		if = {
-			limit = { ARM = { NOT = { is_subject_of = SOV } } }
-			ARM = {
-				every_controlled_state = {
-					add_core_of = SOV
-				}
-			}
-			SOV = {
-				set_temp_variable = { wargoal_on = ARM }
-				set_temp_variable = { wargoal_type = 2 }
-				add_threat_from_wargoal_effect = yes
-				create_wargoal = {
-					target = ARM
-					type = annex_everything
-				}
-			}
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = russia_governorate.23.o1
+    }
 }
 
 #Artsakh Problem
@@ -6892,81 +6551,13 @@ country_event = {
 }
 ##Allied with Armenia Greece and Sirya
 country_event = {
-	id = sov_nationalists.12
-	title = sov_nationalists.12.t
-	desc = sov_nationalists.12.d
-	picture = GFX_SOV_generic
-	is_triggered_only = yes
+    id = sov_nationalists.12
+    is_triggered_only = yes
 
-	option = {
-		name = sov_nationalists.12.a
-		log = "[GetDateText]: [This.GetName]: sov_nationalists.12.a"
-		if = {
-			limit = {
-				is_in_faction = yes
-			}
-			leave_faction = yes
-		}
-		SOV = { add_to_faction = PREV }
-		SOV = { country_event = diplomatic_response.1 }
-		add_opinion_modifier = { target = SOV modifier = has_expressed_loyalty }
-		diplomatic_relation = {
-			country = SOV
-			relation = military_access
-		}
-		add_opinion_modifier = { target = SOV modifier = has_expressed_loyalty }
-		diplomatic_relation = {
-			country = SOV
-			relation = military_access
-		}
-		add_ideas = S0V_russian_sphere_idea
-		TUR = {
-			add_stability = -0.05
-			add_opinion_modifier = { target = SOV modifier = major_breach_of_trust }
-			add_opinion_modifier = { target = ROOT modifier = major_breach_of_trust }
-		}
-		if = {
-			limit = {
-				original_tag = ARM
-			}
-			add_war_support = 0.05
-			AZE = { country_event = sov_other.17 }
-			ARM = {
-				add_opinion_modifier = { target = SOV modifier = has_expressed_loyalty }
-				country_event = sov_other.17
-			}
-			AZE = { country_event = sov_other.17 }
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				has_government = nationalist
-				factor = 50
-			}
-		}
-	}
-	option = {
-		name = sov_nationalists.12.b
-		log = "[GetDateText]: [This.GetName]: sov_nationalists.12.b"
-		SOV = {
-			country_event = { id = sov_nationalists.13 }
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				has_government = democratic
-				factor = 50
-			}
-			modifier = {
-				has_government = communism
-				factor = 50
-			}
-			modifier = {
-				has_government = neutrality
-				factor = 50
-			}
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = sov_nationalists.12.a
+    }
 }
 country_event = {
 	id = sov_nationalists.13
@@ -8919,92 +8510,13 @@ news_event = {
 ### Operation in Ukraine Events
 ##Operation Declared
 country_event = {
-	id = sov_final_strike.1
-	title = sov_final_strike.1.t
-	desc = sov_final_strike.1.d
-	picture = GFX_declare_svo
-	is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {
-		has_completed_focus = SOV_the_final_strike
-	}
-	option = {
-		name = sov_final_strike.1.a
-		log = "[GetDateText]: [This.GetName]: sov_final_strike.1.a"
-		add_to_variable = { party_pop_array^6 = 0.05 }
-		recalculate_party = yes
-		every_country = {
-			limit = {
-				OR = {
-					has_idea = NATO_member
-					has_idea = EU_member
-				}
-			}
-			add_opinion_modifier = {
-				target = SOV
-				modifier = major_breach_of_trust
-			}
-		}
-		hidden_effect = {
-			news_event = {
-				hours = 6
-				id = russia_news.11
-			}
-			IF = {
-				limit = {
-					BLR = {
-						has_government = communism
-						has_war = no
-					}
-				}
-				BLR = {
-					country_event = { id = sov_final_strike.6 days = 1 }
-				}
-			}
-			IF = {
-				limit = {
-					NOT = {
-						OR = {
-							has_idea = negligible_corruption
-							has_idea = slight_corruption
-							has_idea = modest_corruption
-							has_idea = medium_corruption
-						}
-					}
-				}
-				SOV = {
-					country_event = { id = sov_final_strike.2 days = 15 }
-				}
-			}
-			else = {
-				SOV = {
-					country_event = { id = sov_final_strike.3 days = 15 }
-				}
-			}
-			IF = {
-				limit = { NOT = { SOV = { has_country_flag = SOV_western_sanctions } } }
-				set_country_flag = SOV_western_sanctions
-				add_dynamic_modifier = { modifier = SOV_western_sanctions_modifier }
-				country_event = { id = sov_final_strike.7 days = 15 }
-				USA = {
-					country_event = { id = sov_final_strike.4 days = 1 }
-				}
-				GER = {
-					country_event = { id = sov_final_strike.4 days = 1 }
-				}
-				FRA = {
-					country_event = { id = sov_final_strike.4 days = 1 }
-				}
-				ENG = {
-					country_event = { id = sov_final_strike.4 days = 1 }
-				}
-			}
-			decrease_economic_growth = yes
-		}
-		ai_chance = {
-			base = 25
-		}
-	}
+    id = sov_final_strike.1
+    is_triggered_only = yes
+
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = sov_final_strike.1.a
+    }
 }
 ##Fast Operation Failed
 country_event = {
@@ -9161,81 +8673,13 @@ country_event = {
 }
 ##Operation Declared in Finland
 country_event = {
-	id = sov_final_strike.8
-	title = sov_final_strike.8.t
-	desc = sov_final_strike.8.d
-	picture = GFX_declare_svo
-	is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {
-		has_completed_focus = SOV_secret_strike
-	}
-	option = {
-		name = sov_final_strike.8.a
-		log = "[GetDateText]: [This.GetName]: sov_final_strike.8.a"
-		add_to_variable = { party_pop_array^6 = 0.05 }
-		recalculate_party = yes
-		every_country = {
-			limit = {
-				OR = {
-					has_idea = NATO_member
-					has_idea = EU_member
-				}
-			}
-			add_opinion_modifier = {
-				target = SOV
-				modifier = major_breach_of_trust
-			}
-		}
-		hidden_effect = {
-			news_event = {
-				hours = 6
-				id = russia_news.13
-			}
-			IF = {
-				limit = {
-					NOT = {
-						OR = {
-							has_idea = negligible_corruption
-							has_idea = slight_corruption
-							has_idea = modest_corruption
-							has_idea = medium_corruption
-						}
-					}
-				}
-				SOV = {
-					country_event = { id = sov_final_strike.2 days = 15 }
-				}
-			}
-			else = {
-				SOV = {
-					country_event = { id = sov_final_strike.3 days = 15 }
-				}
-			}
-			IF = {
-				limit = { NOT = { SOV = { has_country_flag = SOV_western_sanctions } } }
-				set_country_flag = SOV_western_sanctions
-				add_dynamic_modifier = { modifier = SOV_western_sanctions_modifier }
-				country_event = { id = sov_final_strike.7 days = 15 }
-				USA = {
-					country_event = { id = sov_final_strike.9 days = 1 }
-				}
-				GER = {
-					country_event = { id = sov_final_strike.9 days = 1 }
-				}
-				FRA = {
-					country_event = { id = sov_final_strike.9 days = 1 }
-				}
-				ENG = {
-					country_event = { id = sov_final_strike.9 days = 1 }
-				}
-			}
-			decrease_economic_growth = yes
-		}
-		ai_chance = {
-			base = 25
-		}
-	}
+    id = sov_final_strike.8
+    is_triggered_only = yes
+
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = sov_final_strike.8.a
+    }
 }
 ##Impose sanctions on Russia
 country_event = {

@@ -339,14 +339,11 @@ GER_government_change = {
 
 			if = {
 				limit = { check_variable = { GER_dark_winds_status > 90 } }
-				random_list = {
-					10 = { country_event = { id = GER_winds.6 days = 7 } }
-					80 = { }
-				}
+				# DS_STUB: removed orphaned GER_winds.6 event call during Desert Storm pruning
 			}
 			if = {
 				limit = { check_variable = { GER_dark_winds_status = 0 } }
-				news_event = { id = GER_winds.6 days = 7 }
+				# DS_STUB: removed orphaned GER_winds.6 news event call during Desert Storm pruning
 			}
 		}
 	}

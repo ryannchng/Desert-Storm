@@ -2959,44 +2959,11 @@ country_event = {
 	title = TurkeyFocusEvents.2.t
 	desc = TurkeyFocusEvents.2.desc
 	picture = GFX_political_deal
-
 	is_triggered_only = yes
-
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = TurkeyFocusEvents.2.a
-		log = "[GetDateText]: [This.GetName]: TurkeyFocusEvents.2.a executed"
-		ai_chance = {
-			factor = 30
-			modifier = {
-				factor = 2
-				FROM = { is_in_faction_with = PER }
-			}
-		}
-		AZE = { add_state_core = 710 }
-		if = {
-			limit = { country_exists = NKR }
-			AZE = { annex_country = { target = NKR } }
-		}
-		else = {
-			AZE = { transfer_state = 710 }
-		}
-		FROM = { country_event = { id = TurkeyFocusEvents.3 hours = 6 } }
-		AZE = { country_event = { id = TurkeyFocusEvents.3 hours = 6 } }
 	}
-	option = {
-		name = TurkeyFocusEvents.2.b
-		log = "[GetDateText]: [This.GetName]: TurkeyFocusEvents.2.b executed"
-		ai_chance = {
-			factor = 70
-			modifier = {
-				factor = 0.5
-				FROM = { is_in_faction_with = PER }
-			}
-		}
-		FROM = { country_event = { id = TurkeyFocusEvents.4 hours = 6 } }
-		AZE = { country_event = { id = TurkeyFocusEvents.4 hours = 6 } }
-	}
-
 }
 
 #Armenia returns Nagorno-Karabak
@@ -3852,53 +3819,15 @@ country_event = { #Potential settlement for Karabakh?
 	}
 }
 #
-country_event = { #Azerbaijan proposes settlement for Karabakh
+country_event = {
 	id = TurkeyFocusEvents.212
 	title = TurkeyFocusEvents.212.t
 	desc = TurkeyFocusEvents.212.d
 	picture = GFX_hills_azerbaijani
-
 	is_triggered_only = yes
-
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = TurkeyFocusEvents.212.a #Sure
-		log = "[GetDateText]: [This.GetName]: TurkeyFocusEvents.212.a executed"
-		TUR = {
-			country_event = {
-				id = TurkeyFocusEvents.213
-				days = 1
-			}
-		}
-		AZE = {
-			country_event = {
-				id = TurkeyFocusEvents.213
-				days = 1
-			}
-		}
-		ai_chance = { factor = 7 }
-		711 = { transfer_state_to = ARM }
-		NKR = {
-			every_core_state = {
-				transfer_state_to = AZE
-			}
-		}
-	}
-	option = {
-		name = TurkeyFocusEvents.212.b #No, absolutely not
-		log = "[GetDateText]: [This.GetName]: TurkeyFocusEvents.212.b executed"
-		TUR = {
-			country_event = {
-				id = TurkeyFocusEvents.214
-				days = 1
-			}
-		}
-		AZE = {
-			country_event = {
-				id = TurkeyFocusEvents.214
-				days = 1
-			}
-		}
-		ai_chance = { factor = 3 }
 	}
 }
 #
@@ -5981,47 +5910,15 @@ country_event = { #2019 Base in antarctica
 	}
 }
 ##########################################
-country_event = { #Turkey Invites us to the Turkic Confederation (Azerbaijan)
+country_event = {
 	id = TurkicConfederation.1
 	title = TurkicConfederation.1.t
 	desc = TurkicConfederation.1.d
 	picture = GFX_handshake_black
-
 	is_triggered_only = yes
-
-	option = { #We will join
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
+	option = {
 		name = TurkicConfederation.1.a
-		log = "[GetDateText]: [This.GetName]: TurkicConfederation.1.a executed"
-		TUR = {
-			country_event = {
-				id = TurkicConfederation.11
-			}
-		}
-		AZE = { every_core_state = { add_core_of = TUR } }
-		TUR = {
-			annex_country = {
-				target = AZE
-				transfer_troops = no
-			}
-		}
-		ai_chance = {
-			factor = 5
-			modifier = {
-				AZE = { has_opinion = { target = TUR value > 75 } }
-				add = 10
-			}
-		}
-
-	}
-	option = { #It's better we don't
-		name = TurkicConfederation.1.b
-		log = "[GetDateText]: [This.GetName]: TurkicConfederation.1.b executed"
-		TUR = {
-			country_event = {
-				id = TurkicConfederation.12
-			}
-		}
-		ai_chance = { factor = 5 }
 	}
 }
 #

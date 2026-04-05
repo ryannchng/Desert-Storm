@@ -45,11 +45,6 @@ on_actions = {
 			on_weekly_gcc_dominant_member_check = yes
 		}
 	}
-	on_weekly_MOR = {
-		effect = {
-			on_weekly_gcc_dominant_member_check = yes
-		}
-	}
 	on_weekly_EGY = {
 		effect = {
 			on_weekly_gcc_dominant_member_check = yes

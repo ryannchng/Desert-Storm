@@ -1,4 +1,4 @@
-﻿add_namespace = denmark
+add_namespace = denmark
 add_namespace = denmark_news
 add_namespace = denmark_agrar_event
 
@@ -37,51 +37,7 @@ country_event = {
 }
 
 #Negotiate foreign air license
-country_event = {
-	id = denmark.4
-	title = denmark.4.t
-	desc = denmark.4.d
-	picture = GFX_fighter_jet
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	##Accept Send Request
-	option = {
-		name = denmark.4.o1
-		trigger = { has_idea = NATO_member }
-		log = "[GetDateText]: [This.GetName]: denmark.4.o1 executed"
-		USA = { country_event = { id = denmark.4001 days = 1 } }
-
-		ai_chance = { base = 1 }
-	}
-	option = {
-		name = denmark.4.o2
-		trigger = { is_in_faction_with = SOV }
-		log = "[GetDateText]: [This.GetName]: denmark.4.o2 executed"
-		SOV = { country_event = { id = denmark.4001 days = 1 } }
-
-		ai_chance = { base = 1 }
-	}
-
-	#Deny the Request/We Do not have the funds
-	option = {
-		name = denmark.4.o3
-		log = "[GetDateText]: [This.GetName]: denmark.4.o3 executed"
-		add_political_power = 50
-		add_war_support = -0.03
-
-		ai_chance = {
-			base = 0
-			modifier = {
-				add = 10
-				OR = {
-					check_variable = { interest_rate > 7.999 }
-					has_idea = depression
-				}
-			}
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Denmark.txt during Desert Storm pruning
 country_event = {
 	id = denmark.4001
 	title = denmark.4001.t

@@ -10,9 +10,6 @@ SWE_royal_acceptance_resolve = {
 		limit = {
 			check_variable = { SWE_royal_acceptance_status < 25 }
 		}
-		random = {
-			chance = 20
-			country_event = { id = Sweden_royal.8 days = 1 }
-		}
+		# DS_STUB: removed orphaned Sweden_royal.8 event call during Desert Storm pruning
 	}
 }

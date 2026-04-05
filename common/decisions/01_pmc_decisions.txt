@@ -16,6 +16,8 @@
 # 4 = MD ;), mix of EU and US eq + soviet armor, non-aligned
 
 pmc_category = {
+	allowed = { always = no }
+	visible = { always = no }
 	# Blackwater
 	get_blackwater_light_infantry = {
 		available = { always = yes }
@@ -3925,6 +3927,8 @@ pmc_category = {
 }
 
 pmc_global_management = {
+	allowed = { always = no }
+	visible = { always = no }
 	# For sov moved to Wagner focus
 	# found_pmc_global = {
 	# 	visible = {
@@ -4114,6 +4118,8 @@ pmc_global_management = {
 }
 
 pmc_local_management = {
+	allowed = { always = no }
+	visible = { always = no }
 	form_local_pmc = {
 		visible = {
 			NOT = { has_country_flag = founded_pmc }

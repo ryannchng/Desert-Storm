@@ -3,15 +3,7 @@ Syria_decisions = {
 	priority = 100
 
 	allowed = {
-		OR = {
-			original_tag = SYR
-			original_tag = NUS
-			original_tag = FSA
-			original_tag = ALA
-			original_tag = ISI
-			original_tag = DRU
-			original_tag = ROJ
-		}
+		original_tag = SYR
 	}
 
 }
@@ -21,11 +13,7 @@ Syria_foreign_policy = {
 	priority = 100
 
 	allowed = {
-		OR = {
-			original_tag = SYR
-			original_tag = FSA
-			original_tag = NUS
-		}
+		original_tag = SYR
 	}
 
 }
@@ -58,11 +46,7 @@ Syria_greater_syria_decisions = {
 	priority = 100
 
 	allowed = {
-		OR = {
-			original_tag = SYR
-			original_tag = FSA
-			original_tag = NUS
-		}
+		original_tag = SYR
 	}
 
 	visible = {
@@ -113,11 +97,7 @@ Syria_agricultural_subsidies_decisions = {
 
 Syria_digital_investments_decisions = {
 	allowed = {
-		OR = {
-			original_tag = SYR
-			original_tag = FSA
-			original_tag = NUS
-		}
+		original_tag = SYR
 	}
 
 	priority = 100
@@ -129,11 +109,7 @@ Syria_digital_investments_decisions = {
 }
 Syria_centralization_balance_of_power_category = {
 	allowed = {
-		OR = {
-			original_tag = SYR
-			original_tag = FSA
-			original_tag = NUS
-		}
+		original_tag = SYR
 	}
 
 	priority = 100

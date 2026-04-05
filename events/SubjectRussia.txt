@@ -626,80 +626,13 @@ country_event = {
 }
 #Republic Separatism
 country_event = {
-	id = subject_rus.25
-	title = subject_rus.25.t
-	desc = subject_rus.25.d
-	picture = GFX_subject_separatism
+    id = subject_rus.25
+    is_triggered_only = yes
 
-	is_triggered_only = yes
-
-	option = {	#War
-		name = subject_rus.25.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.25.a executed"
-		SOV = {
-			set_autonomy = {
-				target = FROM
-				autonomy_state = autonomy_free
-			}
-		}
-		FROM = {
-			set_country_flag = SUB_subject_rebeliion_flag
-			clr_country_flag = SOV_subject_agree
-		}
-		declare_war_on = {
-			target = FROM
-			type = annex_everything
-		}
-		ai_chance = {
-			base = 30
-		}
-	}
-	option = {	#Status
-		name = subject_rus.25.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.25.a executed"
-		trigger = {
-			FROM = {
-				OR = {
-					has_autonomy_state = autonomy_kray_rf
-					has_autonomy_state = autonomy_oblast_rf
-					has_autonomy_state = autonomy_okrug_rf
-				}
-			}
-		}
-		add_political_power = -150
-		FROM = {
-			country_event = { id = subject_rus.94 }
-			set_temp_variable = { modify_subjectinped = -55 }
-			modify_subjectinped_support = yes
-		}
-		ai_chance = {
-			base = 30
-		}
-	}
-	option = {	#Money
-		name = subject_rus.25.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.25.a executed"
-		trigger = {
-			FROM = {
-				OR = {
-					has_autonomy_state = autonomy_republic_rf
-					has_autonomy_state = autonomy_kray_rf
-					has_autonomy_state = autonomy_oblast_rf
-					has_autonomy_state = autonomy_okrug_rf
-				}
-			}
-		}
-		set_temp_variable = { treasury_change = -17.5 }
-		modify_treasury_effect = yes
-		FROM = {
-			country_event = { id = subject_rus.95 }
-			set_temp_variable = { modify_subjectinped = -35 }
-			modify_subjectinped_support = yes
-		}
-		ai_chance = {
-			base = 30
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = subject_rus.25.a
+    }
 }
 #Chechen Bunt
 country_event = {
@@ -1519,95 +1452,13 @@ country_event = {
 }
 #Tatarstan VPR agreement
 country_event = {
-	id = subject_rus.51
-	title = subject_rus.51.t
-	desc = subject_rus.51.d
-	timeout_days = 5
-	picture = GFX_subject_tatarstan
-	is_triggered_only = yes
+    id = subject_rus.51
+    is_triggered_only = yes
 
-	option = {
-		name = subject_rus.51.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.51.a executed"
-		TAT = { country_event = { id = subject_rus.52 days = 1 } }
-		set_temp_variable = { treasury_change = -2.25 }
-		modify_treasury_effect = yes
-		random_owned_controlled_state = {
-			limit = {
-				free_building_slots = {
-					building = agriculture_district
-					size > 0
-					include_locked = yes
-				}
-				OR = {
-					is_in_home_area = yes
-					NOT = {
-						owner = {
-							any_owned_state = {
-								free_building_slots = {
-									building = agriculture_district
-									size > 0
-									include_locked = yes
-								}
-								is_in_home_area = yes
-							}
-						}
-					}
-				}
-			}
-		}
-		add_opinion_modifier = {
-			target = SOV
-			modifier = large_commercial_relations
-		}
-		add_opinion_modifier = {
-			target = TAT
-			modifier = large_commercial_relations
-		}
-		SOV = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_commercial_relations
-			}
-		}
-		TAT = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_commercial_relations
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 20
-				is_top5_influencer = yes
-			}
-			modifier = {
-				factor = 20
-				is_top3_influencer = yes
-			}
-			modifier = {
-				factor = 20
-				has_opinion = { target = ROOT value > 50 }
-			}
-		}
-	}
-	option = {
-		name = subject_rus.51.b
-		log = "[GetDateText]: [This.GetName]: subject_rus.51.b executed"
-		TAT = { country_event = { id = subject_rus.53 days = 1 } }
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 20
-				NOT = { is_influencer = yes }
-			}
-			modifier = {
-				factor = 20
-				has_opinion = { target = ROOT value < 50 }
-			}
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = subject_rus.51.a
+    }
 }
 #Tatarstan VPR yes agreement
 country_event = {
@@ -1641,95 +1492,13 @@ country_event = {
 }
 #Bashkortostan VPR agreement
 country_event = {
-	id = subject_rus.54
-	title = subject_rus.54.t
-	desc = subject_rus.54.d
-	timeout_days = 5
-	picture = GFX_subject_bashkirya
-	is_triggered_only = yes
+    id = subject_rus.54
+    is_triggered_only = yes
 
-	option = {
-		name = subject_rus.54.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.54.a executed"
-		BSH = { country_event = { id = subject_rus.55 days = 1 } }
-		set_temp_variable = { treasury_change = -2.25 }
-		modify_treasury_effect = yes
-		random_owned_controlled_state = {
-			limit = {
-				free_building_slots = {
-					building = agriculture_district
-					size > 0
-					include_locked = yes
-				}
-				OR = {
-					is_in_home_area = yes
-					NOT = {
-						owner = {
-							any_owned_state = {
-								free_building_slots = {
-									building = agriculture_district
-									size > 0
-									include_locked = yes
-								}
-								is_in_home_area = yes
-							}
-						}
-					}
-				}
-			}
-		}
-		add_opinion_modifier = {
-			target = SOV
-			modifier = large_commercial_relations
-		}
-		add_opinion_modifier = {
-			target = BSH
-			modifier = large_commercial_relations
-		}
-		SOV = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_commercial_relations
-			}
-		}
-		BSH = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_commercial_relations
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 20
-				is_top5_influencer = yes
-			}
-			modifier = {
-				factor = 20
-				is_top3_influencer = yes
-			}
-			modifier = {
-				factor = 20
-				has_opinion = { target = ROOT value > 50 }
-			}
-		}
-	}
-	option = {
-		name = subject_rus.54.b
-		log = "[GetDateText]: [This.GetName]: subject_rus.54.b executed"
-		BSH = { country_event = { id = subject_rus.56 days = 1 } }
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 20
-				NOT = { is_influencer = yes }
-			}
-			modifier = {
-				factor = 20
-				has_opinion = { target = ROOT value < 50 }
-			}
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = subject_rus.54.a
+    }
 }
 #Bashkortostan VPR yes agreement
 country_event = {
@@ -1763,75 +1532,13 @@ country_event = {
 }
 #Yugra VPR agreement
 country_event = {
-	id = subject_rus.57
-	title = subject_rus.57.t
-	desc = subject_rus.57.d
-	timeout_days = 5
-	picture = GFX_subject_yugra
-	is_triggered_only = yes
+    id = subject_rus.57
+    is_triggered_only = yes
 
-	option = {
-		name = subject_rus.57.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.57.a executed"
-		KHM = { country_event = { id = subject_rus.58 days = 1 } }
-		add_timed_idea = {
-			idea = KHM_export
-			days = 450
-		}
-		set_temp_variable = { treasury_change = -5 }
-		modify_treasury_effect = yes
-		add_opinion_modifier = {
-			target = SOV
-			modifier = large_commercial_relations
-		}
-		add_opinion_modifier = {
-			target = KHM
-			modifier = large_commercial_relations
-		}
-		SOV = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_commercial_relations
-			}
-		}
-		KHM = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = large_commercial_relations
-			}
-		}
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 20
-				is_top5_influencer = yes
-			}
-			modifier = {
-				factor = 20
-				is_top3_influencer = yes
-			}
-			modifier = {
-				factor = 20
-				has_opinion = { target = ROOT value > 50 }
-			}
-		}
-	}
-	option = {
-		name = subject_rus.57.b
-		log = "[GetDateText]: [This.GetName]: subject_rus.57.b executed"
-		KHM = { country_event = { id = subject_rus.59 days = 1 } }
-		ai_chance = {
-			base = 50
-			modifier = {
-				factor = 20
-				NOT = { is_influencer = yes }
-			}
-			modifier = {
-				factor = 20
-				has_opinion = { target = ROOT value < 50 }
-			}
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = subject_rus.57.a
+    }
 }
 #Yugra VPR yes agreement
 country_event = {
@@ -3458,71 +3165,23 @@ country_event = {
 }
 #They Agree our demands(Status)
 country_event = {
-	id = subject_rus.94
-	title = subject_rus.94.t
-	desc = subject_rus.94.d
-	picture = GFX_subject_status
-	is_triggered_only = yes
-	option = {
-		name = subject_rus.94.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.94.a executed"
-		SUB_change_status_subject = yes
-		add_political_power = 150
-		SUB_separatism_minus_subject = yes
-		ai_chance = {
-			base = 90
-		}
-	}
-	option = {
-		name = subject_rus.94.b
-		log = "[GetDateText]: [This.GetName]: subject_rus.94.b executed"
-		SOV = {
-			SUB_separatism_plus_subject = yes
-			set_autonomy = {
-				target = ROOT
-				autonomy_state = autonomy_free
-			}
-			country_event = { id = subject_rus.96 }
-		}
-		set_country_flag = SUB_subject_rebeliion_flag
-		ai_chance = {
-			base = 10
-		}
-	}
+    id = subject_rus.94
+    is_triggered_only = yes
+
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = subject_rus.94.a
+    }
 }
 #They Agree our demands(Money)
 country_event = {
-	id = subject_rus.95
-	title = subject_rus.95.t
-	desc = subject_rus.95.d
-	is_triggered_only = yes
-	picture = GFX_subject_subsidies
-	option = {
-		name = subject_rus.95.a
-		log = "[GetDateText]: [This.GetName]: subject_rus.95.a executed"
-		set_temp_variable = { treasury_change = 17.5 }
-		modify_treasury_effect = yes
-		SUB_separatism_minus_subject = yes
-		ai_chance = {
-			base = 90
-		}
-	}
-	option = {
-		name = subject_rus.95.b
-		log = "[GetDateText]: [This.GetName]: subject_rus.95.b executed"
-		SOV = {
-			SUB_separatism_plus_subject = yes
-			set_autonomy = {
-				target = ROOT
-				autonomy_state = autonomy_free
-			}
-			country_event = { id = subject_rus.96 }
-		}
-		set_country_flag = SUB_subject_rebeliion_flag
-		ai_chance = {
-			base = 10
-		}
-	}
+    id = subject_rus.95
+    is_triggered_only = yes
+
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = subject_rus.95.a
+    }
 }
 #Subject Ahuel
 country_event = {
@@ -6066,54 +5725,13 @@ country_event = {
 }
 #Ural Bundesver
 country_event = {
-	id = ural_event.17
-	title = ural_event.17.t
-	desc = ural_event.17.d
-	picture = GFX_subject_ural
-	is_triggered_only = yes
+    id = ural_event.17
+    is_triggered_only = yes
 
-	option = {
-		name = ural_event.17.a
-		log = "[GetDateText]: [This.GetName]: ural_event.17.a executed"
-		add_command_power = 10
-		army_experience = 5
-		URA = { country_event = { id = ural_event.18 days = 1 } }
-		set_temp_variable = { percent_change = 3 }
-		set_temp_variable = { tag_index = GER }
-		set_temp_variable = { influence_target = URA }
-		change_influence_percentage = yes
-		add_opinion_modifier = {
-			target = URA
-			modifier = recent_actions_positive
-		}
-		GER = {
-			add_opinion_modifier = {
-				target = URA
-				modifier = recent_actions_positive
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
-	}
-	option = {
-		name = ural_event.17.b
-		log = "[GetDateText]: [This.GetName]: ural_event.17.b executed"
-		URA = { country_event = { id = ural_event.19 days = 1 } }
-		add_opinion_modifier = {
-			target = URA
-			modifier = recent_actions_negative
-		}
-		GER = {
-			add_opinion_modifier = {
-				target = URA
-				modifier = recent_actions_negative
-			}
-		}
-		ai_chance = {
-			base = 0
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = ural_event.17.a
+    }
 }
 #Ural Yes Bundesver
 country_event = {
@@ -6147,55 +5765,13 @@ country_event = {
 }
 #Ural Trade
 country_event = {
-	id = ural_event.20
-	title = ural_event.20.t
-	desc = ural_event.20.d
-	picture = GFX_subject_ural
-	is_triggered_only = yes
+    id = ural_event.20
+    is_triggered_only = yes
 
-	option = {
-		name = ural_event.20.a
-		log = "[GetDateText]: [This.GetName]: ural_event.20.a executed"
-		URA = { country_event = { id = ural_event.21 days = 1 } }
-		add_timed_idea = { idea = URA_ekb_concern_idea_other days = 930 }
-		set_temp_variable = { treasury_change = -8.75 }
-		modify_treasury_effect = yes
-		set_temp_variable = { percent_change = 5 }
-		set_temp_variable = { tag_index = GER }
-		set_temp_variable = { influence_target = URA }
-		change_influence_percentage = yes
-		add_opinion_modifier = {
-			target = URA
-			modifier = recent_actions_positive
-		}
-		GER = {
-			add_opinion_modifier = {
-				target = URA
-				modifier = recent_actions_positive
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
-	}
-	option = {
-		name = ural_event.20.b
-		log = "[GetDateText]: [This.GetName]: ural_event.20.b executed"
-		URA = { country_event = { id = ural_event.19 days = 1 } }
-		add_opinion_modifier = {
-			target = URA
-			modifier = recent_actions_negative
-		}
-		GER = {
-			add_opinion_modifier = {
-				target = URA
-				modifier = recent_actions_negative
-			}
-		}
-		ai_chance = {
-			base = 0
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = ural_event.20.a
+    }
 }
 #Ural Yes Trade
 country_event = {
@@ -6222,58 +5798,13 @@ country_event = {
 }
 #Ural Infra
 country_event = {
-	id = ural_event.22
-	title = ural_event.22.t
-	desc = ural_event.22.d
-	picture = GFX_subject_ural
-	is_triggered_only = yes
+    id = ural_event.22
+    is_triggered_only = yes
 
-	option = {
-		name = ural_event.22.a
-		log = "[GetDateText]: [This.GetName]: ural_event.22.a executed"
-		URA = { country_event = { id = ural_event.23 days = 1 } }
-		set_temp_variable = { treasury_change = -3.5 }
-		modify_treasury_effect = yes
-		add_timed_idea = {
-			idea = URA_ugmk_idea4_export
-			days = 950
-		}
-		set_temp_variable = { percent_change = 2 }
-		set_temp_variable = { tag_index = GER }
-		set_temp_variable = { influence_target = URA }
-		change_influence_percentage = yes
-		add_opinion_modifier = {
-			target = URA
-			modifier = recent_actions_positive
-		}
-		GER = {
-			add_opinion_modifier = {
-				target = URA
-				modifier = recent_actions_positive
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
-	}
-	option = {
-		name = ural_event.22.b
-		log = "[GetDateText]: [This.GetName]: ural_event.22.b executed"
-		URA = { country_event = { id = ural_event.19 days = 1 } }
-		add_opinion_modifier = {
-			target = URA
-			modifier = recent_actions_negative
-		}
-		GER = {
-			add_opinion_modifier = {
-				target = URA
-				modifier = recent_actions_negative
-			}
-		}
-		ai_chance = {
-			base = 0
-		}
-	}
+    # DS_STUB: out-of-scope event content removed for Desert Storm submod
+    option = {
+        name = ural_event.22.a
+    }
 }
 #Ural Yes Road
 country_event = {

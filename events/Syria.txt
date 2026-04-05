@@ -8,115 +8,27 @@ add_namespace = SyriaFocusNews
 
 #Situation with Tahrir Al-Sham and FSA
 country_event = {
-
 	id = Syria.2
-
 	title = Syria.2.t
 	desc = Syria.2.desc
 	picture = GFX_SYR_tahrir_al_sham
-
 	is_triggered_only = yes
-
-	fire_only_once = yes
-
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = Syria.2.a
-		log = "[GetDateText]: [This.GetName]: Syria.2.a executed"		#Offer them representation
-		ai_chance = {
-			base = 10
-			modifier = {
-				factor = 1.5
-				fascism > 20
-				fascism < 30
-			}
-			modifier = {
-				factor = 2
-				fascism > 30
-				fascism < 40
-			}
-			modifier = {
-				factor = 3
-				fascism > 40
-			}
-			modifier = {
-				factor = 4
-				has_government = fascism
-			}
-		}
-		add_political_power = -50
-		NUS = { country_event = { days = 3 id = Syria.3 } }
-	}
-	option = {
-		name = Syria.2.b
-		log = "[GetDateText]: [This.GetName]: Syria.2.b executed"		#Take them out
-		ai_chance = {
-			base = 90
-			modifier = {
-				factor = 0.8
-				fascism > 20
-				fascism < 30
-			}
-			modifier = {
-				factor = 0.65
-				fascism > 30
-					fascism < 40
-			}
-			modifier = {
-				factor = 0.35
-				fascism > 40
-			}
-			modifier = {
-				factor = 0
-				has_government = fascism
-			}
-		}
-		set_temp_variable = { wargoal_on = NUS }
-		set_temp_variable = { wargoal_type = 2 }
-		add_threat_from_wargoal_effect = yes
-		create_wargoal = { type = annex_everything target = NUS }
-		hidden_effect = { news_event = { id = SyriaNews.2 hours = 6 } }
 	}
 }
 
 #FSA offers representation
 country_event = {
-
 	id = Syria.3
 	title = Syria.3.t
 	desc = Syria.3.desc
 	picture = GFX_SYR_tahrir_al_sham
-
 	is_triggered_only = yes
-
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = Syria.3.a
-		log = "[GetDateText]: [This.GetName]: Syria.3.a executed"			#Agree
-		ai_chance = {
-			base = 25
-			modifier = {
-				factor = 4
-				FSA = { same_ideology = yes }
-			}
-		}
-		FSA = { country_event = { days = 3 id = Syria.4 } }
-		FSA = { set_country_flag = Promised_Representation_NUS }
-		custom_effect_tooltip = GAME_OVER_TT
-	}
-	option = {
-		name = Syria.3.b
-		log = "[GetDateText]: [This.GetName]: Syria.3.b executed"			#Refuse
-		ai_chance = {
-			base = 75
-			modifier = {
-				factor = 0
-				FSA = { same_ideology = yes }
-			}
-		}
-		FSA = { country_event = { days = 3 id = Syria.5 } }
-		set_temp_variable = { wargoal_on = FSA }
-		set_temp_variable = { wargoal_type = 2 }
-		add_threat_from_wargoal_effect = yes
-		create_wargoal = { type = annex_everything target = FSA }
 	}
 }
 

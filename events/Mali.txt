@@ -1221,92 +1221,7 @@ country_event = {
 # Niger events
 # MNJ attacks on outposts
 # Feb, 2007
-country_event = {
-	id = mali.25
-	title = mali.25.t
-	desc = mali.25.d
-	picture = GFX_africa_niger_military
-	is_triggered_only = yes
-	trigger = {
-		original_tag = NGR
-	}
-
-	# Send in the Armed Forces & Request Assistance
-	option = {
-		name = mali.25.a
-		log = "[GetDateText]: [This.GetName]: mali.25.a executed"
-		add_command_power = -25
-
-		# Unpopular with a nationalist government
-		if = {
-			limit = { has_government = nationalist }
-			set_party_index_to_ruling_party = yes
-			set_temp_variable = { party_popularity_increase = -0.03 }
-			set_temp_variable = { temp_outlook_increase = -0.03 }
-			add_relative_party_popularity = yes
-		}
-		else_if = {
-			limit = { has_government = fascism }
-			set_party_index_to_ruling_party = yes
-			set_temp_variable = { party_popularity_increase = -0.06 }
-			set_temp_variable = { temp_outlook_increase = -0.06 }
-			add_relative_party_popularity = yes
-		}
-		if = {
-			limit = { has_idea = AFRICA_idea_tuareg_rebellion }
-			modify_timed_idea = { idea = AFRICA_idea_tuareg_rebellion days = 140 }
-		}
-		else = {
-			add_timed_idea = { idea = AFRICA_idea_tuareg_rebellion days = 140 }
-		}
-
-		FRA = { country_event = { id = mali.28 random_days = 5 } }
-		ai_chance = {
-			base = 1
-		}
-	}
-
-	# Send in the Armed Forces (Nationalist we stand strong option)
-	option = {
-		name = mali.25.b
-		log = "[GetDateText]: [This.GetName]: mali.25.b executed"
-		add_command_power = -50
-		if = {
-			limit = { has_government = nationalist }
-			set_party_index_to_ruling_party = yes
-			set_temp_variable = { party_popularity_increase = 0.02 }
-			set_temp_variable = { temp_outlook_increase = 0.02 }
-			add_relative_party_popularity = yes
-		}
-		else_if = {
-			limit = { has_government = fascism }
-			set_party_index_to_ruling_party = yes
-			set_temp_variable = { party_popularity_increase = 0.03 }
-			set_temp_variable = { temp_outlook_increase = 0.03 }
-			add_relative_party_popularity = yes
-		}
-		if = {
-			limit = { has_idea = AFRICA_idea_tuareg_rebellion }
-			modify_timed_idea = { idea = AFRICA_idea_tuareg_rebellion days = 140 }
-		}
-		else = {
-			add_timed_idea = { idea = AFRICA_idea_tuareg_rebellion days = 140 }
-		}
-
-		FRA = { country_event = { id = mali.28 random_days = 5 } }
-
-		ai_chance = {
-			base = 1
-			modifier = {
-				factor = 1.25
-				OR = {
-					has_government = nationalist
-					has_government = fascism
-				}
-			}
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Mali.txt during Desert Storm pruning
 
 # MNJ Attacked Agadez Airport
 # June, 2007
@@ -1370,34 +1285,7 @@ country_event = {
 
 # MNJ kidnapped four employees of Areva, the French state nuclear corporation
 # June, 2008
-country_event = {
-	id = mali.27
-	title = mali.27.t
-	desc = mali.27.d
-	picture = GFX_areva_mining
-	is_triggered_only = yes
-	trigger = {
-		original_tag = NGR
-	}
-
-	# The Conflict Rages On
-	option = {
-		name = mali.27.a
-		log = "[GetDateText]: [This.GetName]: mali.27.a executed"
-		if = {
-			limit = { has_idea = AFRICA_idea_tuareg_rebellion }
-			modify_timed_idea = { idea = AFRICA_idea_tuareg_rebellion days = 280 }
-		}
-		else = {
-			add_timed_idea = { idea = AFRICA_idea_tuareg_rebellion days = 230 }
-		}
-
-		FRA = { country_event = { id = mali.29 } }
-		ai_chance = {
-			base = 1
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Mali.txt during Desert Storm pruning
 
 # French Event
 # MNJ attacks on outposts

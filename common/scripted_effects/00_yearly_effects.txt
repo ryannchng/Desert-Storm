@@ -45,7 +45,7 @@ MD_event_on_startup_events = {
 		country_event = { id = iranian_events.300 days = 200 }
 	}
 	GER = {
-		country_event = { id = germany.369 days = 3 } # Information Event
+		# DS_STUB: removed orphaned Germany information event during Desert Storm pruning
 		country_event = { id = germany_yearly.29 days = 1 } # Welcome
 		news_event = { id = GER_news.03 days = 176 random_days = 28 } # concord goes down
 		news_event = { id = GER_news.07 days = 189 random_days = 5 }
@@ -631,11 +631,6 @@ trigger_year_2002_events = {
 		country_event = { id = tajik_lore.9 days = 270 }
 	}
 
-	# Trigger the African Union formation event for Libya if it's a random country
-	random_country_with_original_tag = {
-		original_tag_to_check = LBA
-		country_event = { id = AfricanUnion.4 days = 170 random_days = 10 }
-	}
 	ALG = {
 		country_event = { id = ALG_terror.1002 days = 164 }
 		country_event = { id = ALG_terror.1003 days = 199 }
@@ -1014,17 +1009,6 @@ trigger_year_2005_events = {
 		country_event = { id = comoros.22 days = 304 random_days = 29 }
 	}
 
-	# The 2005 West African Drought
-	random_country = {
-		limit = {
-			OR = {
-				original_tag = MAL
-				original_tag = NGR
-				original_tag = BFA
-			}
-		}
-		country_event = { id = african.0 days = 30 random_days = 280 }
-	}
 	ALG = {
 		country_event = { id = alg_generals.1 days = 1 }
 		country_event = { id = ALG_terror.1009 days = 210 }
@@ -1607,19 +1591,6 @@ trigger_year_2010_events = {
 		country_event = { id = JAP_historical.20090808 days = 219 }
 	}
 
-	# The 2010 Nigerien Floods (These are technically called Nigerien but they sprawled to several countries)
-	random_country = {
-		limit = {
-			OR = {
-				original_tag = NGR
-				original_tag = BEN
-				original_tag = GAH
-				original_tag = NIG
-				original_tag = TOG
-			}
-		}
-		country_event = { id = african.3 days = 30 random_days = 280 }
-	}
 }
 trigger_year_2011_events = {
 	ARM = {

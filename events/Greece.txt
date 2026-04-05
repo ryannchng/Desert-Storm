@@ -588,27 +588,7 @@ country_event = {
 }
 
 # Enosis at Last
-country_event = {
-	id = greece.23
-	title = greece.23.t
-	desc = greece.23.d
-	# TODO: add a event picture
-	is_triggered_only = yes
-
-	option = {
-		name = greece.23.a
-		log = "[GetDateText]: [This.GetName]: greece.23.a executed"
-		ENG = { country_event = { id = greece.24 } }
-		812 = {
-			add_core_of = GRE
-		}
-	}
-	option = {
-		name = greece.23.b
-		log = "[GetDateText]: [This.GetName]: greece.23.b executed"
-		ENG = { country_event = { id = greece.25 } }
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Greece.txt during Desert Storm pruning
 
 # Return Akrotiri
 country_event = {

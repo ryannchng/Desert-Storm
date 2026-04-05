@@ -102,23 +102,7 @@ jihadist_conversion_setup = {
 # Regional war declarations for jihadist uprising — deduplicated from ROOT and FROM blocks
 # Scope: the jihadist country declaring wars
 jihadist_regional_war_declarations = {
-	if = { limit = { original_tag = SUD }
-		if = {
-			limit = { SUD = { has_war_with = SSU } }
-			declare_war_on = {
-				target = SSU
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { SUD = { has_war_with = DAR } }
-			declare_war_on = {
-				target = DAR
-				type = annex_everything
-			}
-		}
-	}
-	else_if = {
+	if = {
 		limit = { original_tag = SYR }
 		if = {
 			limit = { country_exists = FSA }
@@ -136,100 +120,11 @@ jihadist_regional_war_declarations = {
 		}
 	}
 	else_if = {
-		limit = { original_tag = FSA }
-		if = {
-			limit = { country_exists = SYR }
-			declare_war_on = {
-				target = SYR
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { country_exists = ROJ }
-			declare_war_on = {
-				target = ROJ
-				type = annex_everything
-			}
-		}
-	}
-	else_if = {
 		limit = { original_tag = IRQ }
 		if = {
 			limit = { country_exists = KUR }
 			declare_war_on = {
 				target = KUR
-				type = annex_everything
-			}
-		}
-	}
-	else_if = {
-		limit = { original_tag = GNA }
-		if = {
-			limit = { country_exists = GNC }
-			declare_war_on = {
-				target = GNC
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { country_exists = HOR }
-			declare_war_on = {
-				target = HOR
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { country_exists = TUA }
-			declare_war_on = {
-				target = TUA
-				type = annex_everything
-			}
-		}
-	}
-	else_if = {
-		limit = { original_tag = GNC }
-		if = {
-			limit = { country_exists = GNA }
-			declare_war_on = {
-				target = GNA
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { country_exists = HOR }
-			declare_war_on = {
-				target = HOR
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { country_exists = TUA }
-			declare_war_on = {
-				target = TUA
-				type = annex_everything
-			}
-		}
-	}
-	else_if = {
-		limit = { original_tag = HOR }
-		if = {
-			limit = { country_exists = GNC }
-			declare_war_on = {
-				target = GNC
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { country_exists = GNA }
-			declare_war_on = {
-				target = GNA
-				type = annex_everything
-			}
-		}
-		if = {
-			limit = { country_exists = TUA }
-			declare_war_on = {
-				target = TUA
 				type = annex_everything
 			}
 		}

@@ -1,4 +1,4 @@
-﻿add_namespace = germany
+add_namespace = germany
 add_namespace = germany_divide
 add_namespace = bavaria
 add_namespace = germany_yearly
@@ -4254,93 +4254,9 @@ country_event = {
 	}
 }
 # Alliance with Russia? (DIE LINKE)
-country_event = {
-	id = Germany.219
-	title = Germany.219.t
-	desc = Germany.219.d
-	picture = GFX_die_linke_stage
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Germany.txt during Desert Storm pruning
 
-	is_triggered_only = yes
-	# ASK TO JOIN CSTO
-	option = {
-		name = Germany.219.a
-		log = "[GetDateText]: [This.GetName]: Germany.219.a executed"
-		SOV = { country_event = { id = CSTO.1 days = 1 } }
-		ai_chance = {
-			base = 5
-		}
-	}
-	# GUARANTEES
-	option = {
-		name = Germany.219.b
-		log = "[GetDateText]: [This.GetName]: Germany.219.b executed"
-		SOV = {
-			country_event = {
-				id = Germany.205
-				days = 1
-			}
-		}
-		ai_chance = {
-			base = 5
-		}
-	}
-	# DON'T DO ANYTHING
-	option = {
-		name = Germany.219.c
-		log = "[GetDateText]: [This.GetName]: Germany.219.c executed"
-		ai_chance = {
-			base = 5
-		}
-	}
-}
-
-country_event = {
-	id = Germany.220
-	title = Germany.220.t
-	desc = Germany.220.d
-	picture = GFX_german_parliment
-
-	is_triggered_only = yes
-	# Ok
-	option = {
-		name = Germany.220.a
-		log = "[GetDateText]: [This.GetName]: Germany.220.a executed"
-		GER = {
-			country_event = {
-				id = Germany.221
-				days = 1
-			}
-		}
-		USA = {
-			diplomatic_relation = {
-				country = ROOT
-				relation = military_access
-				active = no
-			}
-		}
-		ai_chance = {
-			base = 5
-			modifier = {
-				has_opinion = { target = GER value > 39 }
-				add = 20
-			}
-		}
-	}
-	# No
-	option = {
-		name = Germany.220.b
-		log = "[GetDateText]: [This.GetName]: Germany.220.b executed"
-		GER = {
-			country_event = {
-				id = Germany.222
-				days = 1
-			}
-		}
-		ai_chance = {
-			base = 5
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Germany.txt during Desert Storm pruning
 
 country_event = {
 	id = Germany.221
@@ -14010,88 +13926,7 @@ country_event = {
 		}
 	}
 }
-country_event = {
-	id = germany_foci.113 #Looking for partners
-	title = germany_foci.113.t
-	desc = germany_foci.113.d
-	is_triggered_only = yes
-
-	option = {
-		name = germany_foci.113.a #GB and NL #Boxer
-		log = "[GetDateText]: [This.GetName]: germany_foci.113.a executed"
-		custom_effect_tooltip = germany_foci.113.a_desc
-		GER = {
-			country_event = {
-				id = germany_foci.1131
-				days = 35
-			}
-		}
-		ENG = {
-			country_event = {
-				id = germany_foci.1131
-				days = 35
-			}
-		}
-		HOL = {
-			country_event = {
-				id = germany_foci.1131
-				days = 35
-			}
-		}
-
-		ai_chance = {
-			base = 5
-		}
-	}
-	option = {
-		name = germany_foci.113.b #FRA #POL
-		log = "[GetDateText]: [This.GetName]: germany_foci.113.b executed"
-		custom_effect_tooltip = germany_foci.113.b_desc
-		GER = {
-			country_event = {
-				id = germany_foci.1134
-				days = 35
-			}
-		}
-		FRA = {
-			country_event = {
-				id = germany_foci.1134
-				days = 35
-			}
-		}
-		POL = {
-			country_event = {
-				id = germany_foci.1134
-				days = 35
-			}
-		}
-
-		ai_chance = {
-			base = 5
-		}
-	}
-	option = {
-		name = germany_foci.113.c #Israel
-		log = "[GetDateText]: [This.GetName]: germany_foci.113.c executed"
-		custom_effect_tooltip = germany_foci.113.c_desc
-		GER = {
-			country_event = {
-				id = germany_foci.1137
-				days = 35
-			}
-		}
-		ISR = {
-			country_event = {
-				id = germany_foci.1137
-				days = 35
-			}
-		}
-
-		ai_chance = {
-			base = 5
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Germany.txt during Desert Storm pruning
 country_event = {
 	id = germany_foci.1131 #set requirements
 	title = germany_foci.1131.t
@@ -15497,75 +15332,7 @@ country_event = {
 		}
 	}
 }
-country_event = {
-	id = germany_foci.134 #Looking for partners
-	title = germany_foci.134.t
-	desc = germany_foci.134.d
-	picture = GFX_Tank_fatory3
-
-	is_triggered_only = yes
-
-	option = {
-		name = germany_foci.134.a #FRA MGCS
-		log = "[GetDateText]: [This.GetName]: germany_foci.134.a executed"
-		custom_effect_tooltip = germany_foci.134.a_desc
-		GER = {
-			country_event = {
-				id = germany_foci.1341
-				days = 35
-			}
-		}
-		FRA = {
-			country_event = {
-				id = germany_foci.1341
-				days = 35
-			}
-		}
-		ai_chance = {
-			base = 5
-		}
-	}
-	option = {
-		name = germany_foci.134.b #ENG #challenger 3
-		log = "[GetDateText]: [This.GetName]: germany_foci.134.b executed"
-		custom_effect_tooltip = germany_foci.134.b_desc
-		GER = {
-			country_event = {
-				id = germany_foci.1344
-				days = 35
-			}
-		}
-		ENG = {
-			country_event = {
-				id = germany_foci.1344
-				days = 35
-			}
-		}
-		ai_chance = {
-			base = 5
-		}
-	}
-	option = {
-		name = germany_foci.134.c #USA MBT 30
-		log = "[GetDateText]: [This.GetName]: germany_foci.134.c executed"
-		custom_effect_tooltip = germany_foci.134.c_desc
-		GER = {
-			country_event = {
-				id = germany_foci.1347
-				days = 35
-			}
-		}
-		USA = {
-			country_event = {
-				id = germany_foci.1347
-				days = 35
-			}
-		}
-		ai_chance = {
-			base = 5
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Germany.txt during Desert Storm pruning
 country_event = {
 	id = germany_foci.1341 #set requirements
 	title = germany_foci.1341.t
@@ -17702,57 +17469,7 @@ country_event = {
 	}
 }
 #Handle the Crisi
-country_event = {
-	id = GER_agrar.3
-	title = GER_agrar.3.t
-	desc = GER_agrar.3.d
-	picture = GFX_BSE-Bild_II
-
-	is_triggered_only = yes
-
-	fire_only_once = yes
-
-	option = { # investigate the reason
-		name = GER_agrar.3.a
-		log = "[GetDateText]: [This.GetName]:GER_agrar.3.a executed"
-		custom_effect_tooltip = GER_agrar.3.a_desc
-		set_temp_variable = { treasury_change = gdp_from_agriculture }
-		multiply_temp_variable = { treasury_change = -0.04 }
-		modify_treasury_effect = yes
-		add_stability = 0.02
-		hidden_effect = {
-			country_event = {
-				id = GER_agrar.4
-				days = 120
-			}
-		}
-		ai_chance = {
-			base = 3
-		}
-	}
-
-	option = { # blame the GB
-		name = GER_agrar.3.b
-		log = "[GetDateText]: [This.GetName]:GER_agrar.3.b executed"
-		custom_effect_tooltip = GER_agrar.3.b_desc
-		ENG = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = GER_blame_for_BSE
-			}
-		}
-		add_stability = 0.01
-		hidden_effect = {
-			country_event = {
-				id = GER_agrar.3
-				days = 120
-			}
-		}
-		ai_chance = {
-			base = 3
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Germany.txt during Desert Storm pruning
 #aftermath
 country_event = {
 	id = GER_agrar.4

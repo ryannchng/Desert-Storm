@@ -75,21 +75,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 566 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_allepo_global }
@@ -102,21 +92,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 186 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_damascus_global }
@@ -129,21 +109,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 190 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_Idlib_global }
@@ -156,21 +126,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 184 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_Daraa_global }
@@ -183,21 +143,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 191 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_Raqqa_global }
@@ -210,21 +160,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 166 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_Mosul_global }
@@ -237,21 +177,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 168 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_Fallujah_global }
@@ -264,21 +194,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 164 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = captured_Erbil_global }
@@ -291,21 +211,11 @@ on_actions = {
 				limit = {
 					FROM.FROM = { state = 193 }
 					OR = {
-						FROM = { tag = FSA }
 						FROM = { tag = SYR }
-						FROM = { tag = ISI }
-						FROM = { tag = ROJ }
-						FROM = { tag = KUR }
-						FROM = { tag = PUK }
 						FROM = { tag = IRQ }
 					}
 					OR = {
-						ROOT = { tag = FSA }
 						ROOT = { tag = SYR }
-						ROOT = { tag = ISI }
-						ROOT = { tag = ROJ }
-						ROOT = { tag = KUR }
-						ROOT = { tag = PUK }
 						ROOT = { tag = IRQ }
 					}
 					not = { has_global_flag = Hasakah_global }
@@ -319,14 +229,10 @@ on_actions = {
 					FROM.FROM = { state = 195 }
 					OR = {
 						FROM = { tag = SAU }
-						FROM = { tag = HOU }
-						FROM = { tag = AQY }
 						FROM = { tag = YEM }
 					}
 					OR = {
 						ROOT = { tag = SAU }
-						ROOT = { tag = HOU }
-						ROOT = { tag = AQY }
 						ROOT = { tag = YEM }
 					}
 					not = { has_global_flag = captured_sanaa_global }
@@ -340,14 +246,10 @@ on_actions = {
 					FROM.FROM = { state = 198 }
 					OR = {
 						FROM = { tag = SAU }
-						FROM = { tag = HOU }
-						FROM = { tag = AQY }
 						FROM = { tag = YEM }
 					}
 					OR = {
 						ROOT = { tag = SAU }
-						ROOT = { tag = HOU }
-						ROOT = { tag = AQY }
 						ROOT = { tag = YEM }
 					}
 					not = { has_global_flag = captured_aden_global }

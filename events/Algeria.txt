@@ -1,4 +1,4 @@
-﻿add_namespace = ALG_civilwar
+add_namespace = ALG_civilwar
 add_namespace = Algeria
 add_namespace = alg
 add_namespace = ALG
@@ -2985,48 +2985,7 @@ country_event = {
 	}
 }
 #Algeris Metro
-country_event = {
-	id = algeria_invest.10
-	title = algeria_invest.10.t
-	desc = algeria_invest.10.d
-	picture = GFX_krasnodar_metro
-	is_triggered_only = yes
-	option = {
-		name = algeria_invest.10.a
-		log = "[GetDateText]: [This.GetName]: algeria_invest.10.a executed"
-		set_temp_variable = { percent_change = 8 }
-		set_temp_variable = { tag_index = CHI }
-		set_temp_variable = { influence_target = ALG }
-		change_influence_percentage = yes
-		add_dynamic_modifier = { modifier = ALG_algiers_metro }
-		ai_chance = {
-			base = 5
-		}
-	}
-	option = {
-		name = algeria_invest.10.b
-		log = "[GetDateText]: [This.GetName]: algeria_invest.10.b executed"
-		custom_effect_tooltip = steal_turkish_money_tt
-		hidden_effect = {
-			ALG = {
-				set_temp_variable = { treasury_change = 10 }
-				modify_treasury_effect = yes
-			}
-			CHI = {
-				set_temp_variable = { treasury_change = -10 }
-				modify_treasury_effect = yes
-			}
-		}
-		CHI = { country_event = { id = algeria_invest.11 days = 1 } }
-		set_temp_variable = { percent_change = -8 }
-		set_temp_variable = { tag_index = CHI }
-		set_temp_variable = { influence_target = ALG }
-		change_influence_percentage = yes
-		ai_chance = {
-			base = 1
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 country_event = {
 	id = algeria_invest.11
 	title = algeria_invest.11.t
@@ -3448,46 +3407,7 @@ country_event = {
 		hidden_effect = { news_event = { id = AlgeriaFocusNews.AU_regional_approach hours = 6 } }
 	}
 }
-country_event = {
-	id = ALG_morocco.2
-	title = ALG_morocco.2.t
-	desc = ALG_morocco.2.d
-	picture = GFX_mor_flag
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	trigger = {
-		tag = MOR
-		check_variable = { variable = algeria_casablanca_result value = 3 compare = greater_than_or_equals }
-	}
-
-
-	option = {
-		name = ALG_morocco.2.a
-		log = "[GetDateText]: [This.GetName]: ALG_morocco.2.a"
-		set_temp_variable = { percent_change = -6 }
-		change_domestic_influence_percentage = yes
-		ALG = {
-			set_temp_variable = { percent_change = 6 }
-			change_domestic_influence_percentage = yes
-		}
-		add_opinion_modifier = {
-			target = ALG
-			modifier = unwanted_pressure
-		}
-		add_political_power = -20
-		add_stability = -0.02
-	}
-
-	option = {
-		name = ALG_morocco.2.b
-		log = "[GetDateText]: [This.GetName]: ALG_morocco.2.b"
-		add_stability = -0.03
-		add_political_power = -50
-		USA = { add_opinion_modifier = { target = MOR modifier = sanctions_relations } }
-		hidden_effect = { news_event = { id = AlgeriaFocusNews.MOR_resists_pressure hours = 6 } }
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 news_event = {
 	id = AlgeriaFocusNews.AU_court_great_powers
 	title = AlgeriaFocusNews.AU_court_great_powers.t
@@ -4175,69 +4095,7 @@ country_event = {
 		set_country_flag = ALG_black_spring_triggered
 	}
 }
-country_event = {
-	id = algeria.157
-	title = algeria.157.t
-	desc = algeria.157.d
-	picture = GFX_israeli_soldiers_injured
-
-	is_triggered_only = yes
-
-	option = {
-		name = algeria.157.a
-		log = "[GetDateText]: [This.GetName]: algeria.157.a executed"
-		SOV = {
-			set_temp_variable = { treasury_change = 10 }
-			modify_treasury_effect = yes
-		}
-		ALG = {
-			set_temp_variable = { treasury_change = -10 }
-			modify_treasury_effect = yes
-			country_event = { id = algeria.158 }
-		}
-		if = {
-			limit = { has_dlc = "By Blood Alone" }
-			SOV = {
-				add_equipment_to_stockpile = {
-					type = small_plane_strike_airframe_2
-					variant_name = "MiG-29 Fulcrum"
-					amount = 20
-				}
-			}
-			ALG = {
-				add_equipment_to_stockpile = {
-					type = small_plane_airframe_2
-					variant_name = "MiG-29 Fulcrum"
-					amount = 20
-					producer = SOV
-				}
-			}
-		}
-		else = {
-			SOV = {
-				add_equipment_to_stockpile = {
-					type = small_plane_strike_airframe_2
-					amount = 20
-					producer = SOV
-				}
-			}
-			ALG = {
-				add_equipment_to_stockpile = {
-					type = small_plane_strike_airframe_2
-					amount = 20
-					producer = SOV
-				}
-			}
-		}
-		ai_chance = { base = 1 }
-	}
-	option = {
-		name = algeria.157.b
-		log = "[GetDateText]: [This.GetName]: algeria.157.b executed"
-		ALG = { country_event = { id = algeria.159 } }
-		ai_chance = { base = 0 }
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 country_event = {
 	id = algeria.158
 	title = algeria.158.t
@@ -6043,37 +5901,7 @@ country_event = { #Invitation to the CIW
 		ai_chance = { factor = 3 }
 	}
 }
-country_event = { #Algeria is inviting us to CIW (Iraq)
-	id = AlgeriaFocusEvents.41
-	title = AlgeriaFocusEvents.41.t
-	desc = AlgeriaFocusEvents.41.d
-	picture = GFX_political_deal
-
-	is_triggered_only = yes
-
-	option = { #Good Idea
-		name = AlgeriaFocusEvents.41.a
-		log = "[GetDateText]: [This.GetName]: AlgeriaFocusEvents.41.a executed"
-		FROM = { country_event = { id = md4.17 hours = 3 } }
-		ai_chance = {
-			factor = 5
-			modifier = {
-				IRQ = { has_opinion = { target = ALG value > 49 } }
-				add = 20
-			}
-		}
-	}
-	option = { #No
-		name = AlgeriaFocusEvents.41.b
-		log = "[GetDateText]: [This.GetName]: AlgeriaFocusEvents.41.b executed"
-		ALG = {
-			country_event = {
-				id = AlgeriaFocusEvents.411
-			}
-		}
-		ai_chance = { factor = 5 }
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 #
 country_event = { #Iraq is not interested
 	id = AlgeriaFocusEvents.411
@@ -6091,37 +5919,7 @@ country_event = { #Iraq is not interested
 	}
 }
 #
-country_event = { #Algeria is inviting us to CIW (algeria)
-	id = AlgeriaFocusEvents.42
-	title = AlgeriaFocusEvents.42.t
-	desc = AlgeriaFocusEvents.42.d
-	picture = GFX_political_deal
-
-	is_triggered_only = yes
-
-	option = { #Good Idea
-		name = AlgeriaFocusEvents.42.a
-		log = "[GetDateText]: [This.GetName]: AlgeriaFocusEvents.42.a executed"
-		FROM = { country_event = { id = md4.17 hours = 3 } }
-		ai_chance = {
-			factor = 5
-			modifier = {
-				IRQ = { has_opinion = { target = ALG value > 49 } }
-				add = 20
-			}
-		}
-	}
-	option = { #No
-		name = AlgeriaFocusEvents.42.b
-		log = "[GetDateText]: [This.GetName]: AlgeriaFocusEvents.42.b executed"
-		ALG = {
-			country_event = {
-				id = AlgeriaFocusEvents.421
-			}
-		}
-		ai_chance = { factor = 5 }
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 country_event = { #algeria is not interested
 	id = AlgeriaFocusEvents.421
 	title = AlgeriaFocusEvents.421.t
@@ -6410,51 +6208,7 @@ country_event = {
 		}
 	}
 }
-country_event = {
-
-	id = algeria.45
-	title = algeria.45.t
-	desc = algeria.45.d
-	picture = GFX_israeli_soldiers_injured
-
-	is_triggered_only = yes
-
-	option = {
-		name = algeria.45.a
-		log = "[GetDateText]: [This.GetName]: algeria.45.a executed"
-		ai_chance = { base = 1 }
-		set_temp_variable = { temp_opinion = 10 }
-		change_The_Military_opinion = yes
-		ISR = { country_event = { id = algeria.46 } }
-	}
-	option = {
-		name = algeria.45.b
-		log = "[GetDateText]: [This.GetName]: algeria.45.b executed"
-		ai_chance = { base = 1 }
-		add_political_power = 150
-		add_stability = 0.05
-		set_temp_variable = { temp_opinion = 5 }
-		change_The_Military_opinion = yes
-	}
-	option = {
-		name = algeria.45.c
-		log = "[GetDateText]: [This.GetName]: algeria.45.c executed"
-		ai_chance = { base = 1 }
-		set_temp_variable = { temp_opinion = -5 }
-		change_The_Military_opinion = yes
-		add_stability = -0.1
-		add_political_power = -100
-		set_temp_variable = { wargoal_on = ISR }
-		set_temp_variable = { wargoal_type = 1 }
-		add_threat_from_wargoal_effect = yes
-		create_wargoal = {
-			target = ISR
-			type = liberate_wargoal
-		}
-		HAM = { country_event = { id = algeria.41 } }
-		PAL = { country_event = { id = algeria.41 } }
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 
 country_event = {
 
@@ -7680,31 +7434,7 @@ country_event = {
 	}
 }
 # Nuclear Events
-country_event = {
-	id = nuclear_algeria.1
-	title = nuclear_algeria.1.t
-	desc = nuclear_algeria.1.d
-
-	is_triggered_only = yes
-	option = {
-		name = nuclear_algeria.1.a
-		log = "[GetDateText]: [This.GetName]: nuclear_algeria.1.a executed"
-		trigger = {
-			NOT = {
-				has_war_with = CHI
-			}
-		}
-		CHI = {
-			country_event = {
-				id = nuclear_algeria.2
-				days = 1
-			}
-		}
-		ai_chance = {
-			base = 10
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 
 # Algeria Asks Us for Help
 country_event = {
@@ -7787,72 +7517,7 @@ country_event = {
 }
 
 
-country_event = {
-	id = nuclear_algeria.6
-	title = nuclear_algeria.6.t
-	desc = nuclear_algeria.6.d
-
-	is_triggered_only = yes
-	# Okay
-	option = {
-		name = nuclear_algeria.6.a
-		log = "[GetDateText]: [This.GetName]: nuclear_algeria.6.a executed"
-		if = {
-			limit = {
-				has_dlc = "Gotterdammerung"
-			}
-			send_equipment = {
-				type = guided_missile_equipment_1
-				amount = 400
-				target = ALG
-			}
-		}
-		else = {
-			send_equipment = {
-				type = ballistic_missile_equipment
-				amount = 400
-				target = ALG
-			}
-		}
-		effect_tooltip = {
-			ALG = {
-				set_temp_variable = { treasury_change = -30.00 }
-				modify_treasury_effect = yes
-			}
-			CHI = {
-				set_temp_variable = { treasury_change = 30.00 }
-				modify_treasury_effect = yes
-			}
-			set_temp_variable = { percent_change = 4 }
-			set_temp_variable = { tag_index = CHI }
-			set_temp_variable = { influence_target = ALG }
-			change_influence_percentage = yes
-		}
-		ALG = {
-			country_event = {
-				id = nuclear_algeria.7
-				days = 1
-			}
-		}
-		ai_chance = {
-			base = 10
-		}
-	}
-	# No
-	option = {
-		name = nuclear_algeria.6.b
-		log = "[GetDateText]: [This.GetName]: nuclear_algeria.6.b executed"
-		ALG = {
-			country_event = {
-				id = nuclear_algeria.8
-				days = 1
-			}
-		}
-		ai_chance = {
-			base = 1
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 
 country_event = {
 	id = nuclear_algeria.7
@@ -8324,43 +7989,7 @@ country_event = {
 	}
 }
 # US Gives its own offer
-country_event = {
-	id = nuclear_algeria.15
-	title = nuclear_algeria.15.t
-	desc = nuclear_algeria.15.d
-
-	is_triggered_only = yes
-	# Ok
-	option = {
-		name = nuclear_algeria.15.a
-		log = "[GetDateText]: [This.GetName]: nuclear_algeria.15.a executed"
-		USA = {
-			country_event = {
-				id = nuclear_algeria.16
-				days = 1
-			}
-		}
-		ai_chance = {
-			base = 1
-		}
-	}
-	# No
-	option = {
-		name = nuclear_algeria.15.b
-		log = "[GetDateText]: [This.GetName]: nuclear_algeria.15.b executed"
-		set_country_flag = ALG_nuclear_known
-		set_country_flag = ALG_sanctioned
-		USA = {
-			country_event = {
-				id = nuclear_algeria.17
-				days = 1
-			}
-		}
-		ai_chance = {
-			base = 1
-		}
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Algeria.txt during Desert Storm pruning
 # Iran accepts our offer
 country_event = {
 	id = nuclear_algeria.16

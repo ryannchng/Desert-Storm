@@ -294,7 +294,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_inviter@ROOT
 			FROM = { set_country_flag = alliance_applicant@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 
@@ -315,7 +315,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_inviter@ROOT
 			FROM = { set_country_flag = alliance_applicant@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 
@@ -336,7 +336,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_inviter@ROOT
 			FROM = { set_country_flag = alliance_applicant@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 
@@ -373,7 +373,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_inviter@ROOT
 			FROM = { set_country_flag = alliance_applicant@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 
@@ -593,7 +593,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_applicant@ROOT
 			FROM = { set_country_flag = alliance_inviter@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 
@@ -616,7 +616,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_applicant@ROOT
 			FROM = { set_country_flag = alliance_inviter@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 
@@ -639,7 +639,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_applicant@ROOT
 			FROM = { set_country_flag = alliance_inviter@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 
@@ -678,7 +678,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = alliance_applicant@ROOT
 			FROM = { set_country_flag = alliance_inviter@ROOT }
-			news_event = { id = news.289 hours = 12 }
+			# DS_STUB: removed orphaned alliance news event during Desert Storm pruning
 		}
 	}
 

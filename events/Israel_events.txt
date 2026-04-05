@@ -14719,31 +14719,9 @@ country_event = {
 	desc = israel.27.d
 	picture = GFX_israeli_government_event
 	is_triggered_only = yes
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = israel.27.a
-		trigger = {
-			has_country_flag = shar_not_conv
-		}
-		log = "[GetDateText]: [This.GetName]: israel.27.a executed"
-		country_event = { id = israel.28 days = 1 }
-		PAL = {
-			country_event = { id = israel.28 days = 1 }
-		}
-		ai_chance = {
-			base = 100
-		}
-	}
-	option = {
-		name = israel.27.b
-		trigger = {
-			NOT = {
-				has_country_flag = shar_not_conv
-			}
-		}
-		log = "[GetDateText]: [This.GetName]: israel.27.b executed"
-		ai_chance = {
-			base = 100
-		}
 	}
 }
 
@@ -19253,65 +19231,9 @@ country_event = {
 	desc = israel.116.d
 	picture = GFX_israeli_government_event
 	is_triggered_only = yes
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = israel.116.a
-		trigger = {
-			tag = ISR
-		}
-		log = "[GetDateText]: [This.GetName]: israel.116.a executed"
-		custom_effect_tooltip = isr_tension_decrease_10_TT
-		subtract_from_variable = {
-			ISR_palestine_situation_additional = 10
-		}
-		add_stability = 0.03
-		add_war_support = -0.05
-		add_manpower = 5000
-		swap_ideas = {
-			remove_idea = ISR_support_of_settlements
-			add_idea = ISR_support_of_settlements2
-		}
-		209 = {
-			remove_dynamic_modifier = {
-				modifier = israeli_settlements
-			}
-		}
-		diplomatic_relation = {
-			country = HAM
-			relation = non_aggression_pact
-			active = yes
-		}
-		unlock_decision_tooltip = ISR_raid_beit_leiha
-		hidden_effect = {
-			HAM = {
-				country_event = israel.116
-			}
-			country_event = { id = israel.117 days = 20 }
-			country_event = { id = israel.118 days = 40 }
-			country_event = { id = israel.119 days = 50 }
-		}
-		ai_chance = {
-			base = 100
-		}
-	}
-	option = {
-		name = israel.116.b
-		trigger = {
-			tag = HAM
-		}
-		log = "[GetDateText]: [This.GetName]: israel.116.a executed"
-		custom_effect_tooltip = isr_tension_decrease_10_TT
-		add_stability = 0.03
-		add_war_support = 0.05
-		effect_tooltip = {
-			209 = {
-				remove_dynamic_modifier = {
-					modifier = israeli_settlements
-				}
-			}
-		}
-		ai_chance = {
-			base = 100
-		}
 	}
 }
 
@@ -20597,50 +20519,9 @@ country_event = {
 	desc = israel.150.d
 	picture = GFX_fatah_militants
 	is_triggered_only = yes
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = israel.150.a
-		trigger = {
-			tag = PAL
-		}
-		log = "[GetDateText]: [This.GetName]: israel.150.a executed"
-		add_stability = -0.1
-		add_war_support = -0.15
-		set_temp_variable = { party_index = 12 }
-		set_temp_variable = { party_popularity_increase = 0.1 }
-		add_relative_party_popularity = yes
-		effect_tooltip = {
-			HAM = {
-				set_temp_variable = { party_index = 12 }
-				set_temp_variable = { party_popularity_increase = 0.1 }
-				add_relative_party_popularity = yes
-			}
-		}
-		hidden_effect = {
-			HAM = {
-				country_event = { id = israel.150 days = 1 }
-				country_event = { id = israel.151 days = 547 }
-			}
-			country_event = { id = israel.151 days = 547 }
-		}
-		ai_chance = {
-			base = 30
-		}
-	}
-	option = {
-		name = israel.150.b
-		trigger = {
-			tag = HAM
-		}
-		log = "[GetDateText]: [This.GetName]: israel.150.b executed"
-		add_stability = -0.1
-		HAM = {
-			set_temp_variable = { party_index = 12 }
-			set_temp_variable = { party_popularity_increase = 0.1 }
-			add_relative_party_popularity = yes
-		}
-		ai_chance = {
-			base = 30
-		}
 	}
 }
 

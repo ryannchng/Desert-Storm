@@ -698,56 +698,7 @@ country_event = {
 }
 
 # Georgia Warns Us about Special Operation
-country_event = {
-	id = georg_war2008.6
-	title = georg_war2008.6.t
-	desc = georg_war2008.6.d
-	picture = GFX_medvedev_decision
-	fire_only_once = yes
-	is_triggered_only = yes
-	trigger = {
-		original_tag = SOV
-	}
-
-	option = {
-		name = georg_war2008.6.a
-		log = "[GetDateText]: [This.GetName]: georg_war2008.6.a executed"
-		GEO = {
-			cancel_border_war = {
-				dont_fire_events = yes
-				defender = 705
-				attacker = 707
-			}
-			if = {
-				limit = { NOT = { has_war_with = SOV } }
-				declare_war_on = {
-					target = SOV
-					type = take_claimed_state
-				}
-			}
-			hidden_effect = {
-				SOV = {
-					country_event = { id = georg_war2008.10 hours = 120 random_hours = 2 }
-				}
-			}
-		}
-
-		ai_chance = {
-			base = 75
-			modifier = {
-				factor = 0.8
-				is_historical_focus_on = yes
-				tag = SOV
-			}
-		}
-	}
-
-	option = {
-		name = georg_war2008.6.b
-		log = "[GetDateText]: [This.GetName]: georg_war2008.6.b executed"
-
-	}
-}
+# DS_STUB: migrated to events/ds_migrated_events.txt from events/Georgia.txt during Desert Storm pruning
 
 country_event = {
 	id = georg_war2008.7

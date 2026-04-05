@@ -507,134 +507,6 @@ calculate_additional_income_rate = {
 		set_variable = { seigniorage_income_display = seigniorage_base }
 	}
 	# Additional incomes, set income amount as a variable (weekly gain)
-	if = { limit = { original_tag = HEZ }
-		if = {
-			limit = { has_idea = HEZ_our_cartels_in_south_america }
-			set_variable = { HEZ_south_american_cartels_income = 0.250 }
-			add_to_variable = { additional_income_rate = HEZ_south_american_cartels_income }
-		}
-		if = {
-			limit = { has_completed_focus = HEZ_International_Hezbollah }
-			add_to_variable = { additional_income_rate = hezbollah_weekly_income_from_sold_weapons_variable }
-		}
-		if = {
-			limit = { OR = { has_idea = HEZ_iranian_business_5 has_idea = HEZ_iranian_business_6 } }
-			set_variable = { HEZ_iranian_business_income = 0.200 }
-			add_to_variable = { additional_income_rate = HEZ_iranian_business_income }
-		}
-		if = {
-			limit = {
-				has_completed_focus = HEZ_Lebanese_Support
-				country_exists = LEB
-				NOT = { has_war_with = LEB }
-			}
-			if = {
-				limit = {
-					HEZ = {
-						OR = {
-							AND = {
-								check_variable = { influence_array^0 = LEB }
-								check_variable = { influence_array_val^0 > 49.999 }
-							}
-							AND = {
-								check_variable = { influence_array^1 = LEB }
-								check_variable = { influence_array_val^1 > 49.999 }
-							}
-						}
-					}
-				}
-				set_variable = { HEZ_lebanese_support_money = 2.000 }
-			}
-			else_if = {
-				limit = {
-					HEZ = {
-						OR = {
-							AND = {
-								check_variable = { influence_array^0 = LEB }
-								check_variable = { influence_array_val^0 > 19.999 }
-							}
-							AND = {
-								check_variable = { influence_array^1 = LEB }
-								check_variable = { influence_array_val^1 > 19.999 }
-							}
-							AND = {
-								check_variable = { influence_array^2 = LEB }
-								check_variable = { influence_array_val^2 > 19.999 }
-							}
-							AND = {
-								check_variable = { influence_array^3 = LEB }
-								check_variable = { influence_array_val^3 > 19.999 }
-							}
-						}
-					}
-				}
-				set_variable = { HEZ_lebanese_support_money = 1.000 }
-			}
-			else = {
-				set_variable = { HEZ_lebanese_support_money = 0.250 }
-			}
-			add_to_variable = { additional_income_rate = HEZ_lebanese_support_money }
-		}
-		if = {
-			limit = {
-				has_completed_focus = HEZ_Increased_Iranian_Support
-				country_exists = PER
-				has_government = communism
-				NOT = { has_war_with = PER }
-			}
-			if = {
-				limit = {
-					HEZ = {
-						OR = {
-							AND = {
-								check_variable = { influence_array^0 = PER }
-								check_variable = { influence_array_val^0 > 49.999 }
-							}
-							AND = {
-								check_variable = { influence_array^1 = PER }
-								check_variable = { influence_array_val^1 > 49.999 }
-							}
-						}
-					}
-				}
-				set_variable = { HEZ_iranian_support_money = 2.000 }
-			}
-			else_if = {
-				limit = {
-					HEZ = {
-						OR = {
-							AND = {
-								check_variable = { influence_array^0 = PER }
-								check_variable = { influence_array_val^0 > 19.999 }
-							}
-							AND = {
-								check_variable = { influence_array^1 = PER }
-								check_variable = { influence_array_val^1 > 19.999 }
-							}
-							AND = {
-								check_variable = { influence_array^2 = PER }
-								check_variable = { influence_array_val^2 > 19.999 }
-							}
-							AND = {
-								check_variable = { influence_array^3 = PER }
-								check_variable = { influence_array_val^3 > 19.999 }
-							}
-						}
-					}
-				}
-				set_variable = { HEZ_iranian_support_money = 1.000 }
-			}
-			else = {
-				set_variable = { HEZ_iranian_support_money = 0.250 }
-			}
-			add_to_variable = { additional_income_rate = HEZ_iranian_support_money }
-		}
-		if = {
-			 limit = { always = yes } # This is to stop Hezbollah's economy collapsing early.
-			set_variable = { HEZ_unknown_funds_income = 0.400 }
-			add_to_variable = { additional_income_rate = HEZ_unknown_funds_income }
-		}
-	}
 	if = { limit = { has_idea = full_control_of_suez }
 		set_variable = { additional_income_suez = 0.1 }
 		add_to_variable = { additional_income_rate = additional_income_suez }
@@ -771,155 +643,18 @@ calculate_additional_income_rate = {
 
 	# Country Specific Income
 	# Abkhazia
-	if = {
-		limit = { original_tag = ABK }
-		if = {
-			limit = { has_idea = ABK_tourism1_idea }
-			set_variable = { additional_income_ABK_tourism = 0.20 }
-			add_to_variable = { additional_income_rate = additional_income_ABK_tourism }
-		}
-		if = {
-			limit = { has_idea = ABK_tourism2_idea }
-			set_variable = { additional_income_ABK_tourism2 = 0.35 }
-			add_to_variable = { additional_income_rate = additional_income_ABK_tourism2 }
-		}
-	}
 	# Armenia
-	if = {
-		limit = { original_tag = ARM }
-		if = {
-			limit = {
-				has_idea = ARM_has_artsakh_idea
-			}
-			set_variable = { additional_income_ARM_marz_arm = 0.350 }
-			add_to_variable = { additional_income_rate = additional_income_ARM_marz_arm }
-		}
-	}
 	# Afghanistan
-	if = {
-		limit = { original_tag = AFG }
-		if = {
-			limit = { has_idea = AFG_idea_Opium_Economy }
-			set_variable = { additional_income_AFG_idea_Opium_Economy = population_total }
-			multiply_variable = { additional_income_AFG_idea_Opium_Economy = 0.00375 }	#Millions of people
-			add_to_variable = { additional_income_rate = additional_income_AFG_idea_Opium_Economy }
-		}
-		if = {
-			limit = { has_idea = AFG_idea_Opium_barons }
-			set_variable = { additional_income_AFG_idea_Opium_barons = population_total }
-			multiply_variable = { additional_income_AFG_idea_Opium_barons = 0.00625 }	#Millions of people
-			add_to_variable = { additional_income_rate = additional_income_AFG_idea_Opium_barons }
-		}
-		if = {
-			limit = { has_idea = AFG_idea_state_sponsored_opium_industry }
-			set_variable = { additional_income_AFG_idea_state_sponsored_opium_industry = population_total }
-			multiply_variable = { additional_income_AFG_idea_state_sponsored_opium_industry = 0.00875 } #per million of people
-			add_to_variable = { additional_income_rate = additional_income_AFG_idea_state_sponsored_opium_industry }
-		}
-		if = {
-			limit = { has_idea = AFG_agro_income1 }
-			set_variable = { additional_income_AFG_argro_modernisation = 0.12 }
-			add_to_variable = { additional_income_rate = additional_income_AFG_argro_modernisation }
-		}
-		if = {
-			limit = { has_idea = AFG_western_klep1 }
-			set_variable = { additional_income_AFG_western_klep1 = 0.18 }
-			add_to_variable = { additional_income_rate = additional_income_AFG_western_klep1 }
-		}
-		if = {
-			limit = { has_idea = AFG_Tolls_income1 }
-			set_variable = { additional_income_AFG_Tolls_income1 = 0 }
-			add_to_variable = { additional_income_AFG_Tolls_income1 = AFG_Bactria_earnings_tollage }
-			add_to_variable = { additional_income_AFG_Tolls_income1 = AFG_Badakshan_earnings_tollage }
-			add_to_variable = { additional_income_AFG_Tolls_income1 = AFG_Hindu_Kush_earnings_tollage }
-			add_to_variable = { additional_income_AFG_Tolls_income1 = AFG_Sistan_earnings_tollage }
-			add_to_variable = { additional_income_AFG_Tolls_income1 = AFG_Herat_earnings_tollage }
-			add_to_variable = { additional_income_AFG_Tolls_income1 = AFG_Hazarajat_earnings_tollage }
-			add_to_variable = { additional_income_rate = additional_income_AFG_Tolls_income1 }
-		}
-	}
 	if = {
 		limit = { has_idea = AZE_indian_ports_idea }
 		set_variable = { AZE_indian_ports_idea_gain = 0.25 }
 		add_to_variable = { additional_income_rate = AZE_indian_ports_idea_gain }
 	}
 	# Bosnia
-	if = { limit = { original_tag = BOS }
-		if = {
-			limit = { has_idea = bos_international_funding }
-			set_variable = { Bosnia_united_nations_aid = 0.4 }
-			add_to_variable = { additional_income_rate = Bosnia_united_nations_aid }
-		}
-		if = {
-			limit = { has_idea = BOS_EUFOR }
-			set_variable = { BOS_EUFOR_aid_money = 0.2 }
-			add_to_variable = { additional_income_rate = BOS_EUFOR_aid_money }
-		}
-	}
 	# Bolivia
-	if = {
-		limit = { original_tag = BOL }
-		if = {
-			limit = { OR = { has_idea = BOL_tourism has_idea = BOL_tourism2 } }
-			set_variable = { additional_income_BOL_tourism = 0.50 }
-			add_to_variable = { additional_income_rate = additional_income_BOL_tourism }
-		}
-	}
 	##DPR
-	if = {
-		limit = { original_tag = DPR }
-		if = {
-			limit = { has_idea = DPR_rf_money }
-			set_variable = { additional_income_DPR_rf_money = 0.05 }
-			add_to_variable = { additional_income_rate = additional_income_DPR_rf_money }
-		}
-
-	}
 	# Checnya
 	# FIXME: Missing all of the tooltips in the money UI
-	if = {
-		limit = { original_tag = CHE }
-		if = {
-			limit = { has_idea = CHE_tourism_idea }
-			set_variable = { additional_income_CHE_tourism_idea = 0.15 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_tourism_idea }
-		}
-		if = {
-			limit = { has_idea = CHE_black_market_idea }
-			set_variable = { additional_income_CHE_black_market_idea = 0.030 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_black_market_idea }
-		}
-		if = {
-			limit = { has_idea = CHE_black_market_idea_aze }
-			set_variable = { additional_income_CHE_black_market_idea_aze = 0.060 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_black_market_idea_aze }
-		}
-		if = {
-			limit = { has_idea = CHE_black_market_idea_tur }
-			set_variable = { additional_income_CHE_black_market_idea_tur = 0.120 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_black_market_idea_tur }
-		}
-		if = {
-			limit = { has_idea = CHE_black_market_idea_arm }
-			set_variable = { additional_income_CHE_black_market_idea_arm = 0.060 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_black_market_idea_arm }
-		}
-		if = {
-			limit = { has_idea = CHE_black_market_idea_per }
-			set_variable = { additional_income_CHE_black_market_idea_per = 0.120 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_black_market_idea_per }
-		}
-		if = {
-			limit = { has_idea = CHE_narcos4_idea }
-			set_variable = { additional_income_CHE_narcos4_idea = 0.080 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_narcos4_idea }
-		}
-		if = {
-			limit = { has_idea = CHE_narcos5_idea }
-			set_variable = { additional_income_CHE_narcos5_idea = 0.160 }
-			add_to_variable = { additional_income_rate = additional_income_CHE_narcos5_idea }
-		}
-	}
 	##Wa State
 	if = {
 		limit = { has_idea = WAA_Narcotics_Producer }
@@ -927,287 +662,19 @@ calculate_additional_income_rate = {
 		add_to_variable = { additional_income_rate = additional_income_WAA_Narcotics_Producer }
 	}
 	# Kosovo
-	if = { limit = { original_tag = KOS }
-		if = {
-			limit = { has_idea = KOS_international_aid }
-			set_variable = { KOS_international_aid_income = 0.3 }
-			add_to_variable = { additional_income_rate = KOS_international_aid_income }
-		}
-	}
 	# San-Marino
-	if = {
-		limit = { original_tag = SMA }
-		if = {
-			limit = { has_idea = SMA_increased_tourism }
-			set_variable = { SMA_increased_tourism_gain = 0.2 }
-			add_to_variable = { additional_income_rate = SMA_increased_tourism_gain }
-		}
-		if = {
-			limit = { has_idea = SMA_balance_tourism_ii }
-			set_variable = { SMA_balance_tourism_ii_gain = 0.15 }
-			add_to_variable = { additional_income_rate = SMA_balance_tourism_ii_gain }
-		}
-		if = {
-			limit = { has_idea = SMA_balance_tourism_i }
-			set_variable = { SMA_balance_tourism_i_gain = 0.1 }
-			add_to_variable = { additional_income_rate = SMA_balance_tourism_i_gain }
-		}
-		if = {
-			limit = { has_idea = SMA_balance_balance }
-			set_variable = { SMA_balance_balance_gain = 0.08 }
-			add_to_variable = { additional_income_rate = SMA_balance_balance_gain }
-		}
-		if = {
-		  limit = { has_idea = SMA_balance_economy_i }
-		  set_variable = { SMA_balance_economy_i_gain = 0.1 }
-		  add_to_variable = { additional_income_rate = SMA_balance_economy_i_gain }
-		}
-		if = {
-			limit = { has_idea = SMA_balance_economy_ii }
-			set_variable = { SMA_balance_economy_ii_gain = 0.15 }
-			add_to_variable = { additional_income_rate = SMA_balance_economy_ii_gain }
-		}
-		if = {
-			limit = { has_idea = SMA_increased_economy }
-			set_variable = { SMA_increased_economy_gain = 0.2 }
-			add_to_variable = { additional_income_rate = SMA_increased_economy_gain }
-		}
-	}
 	#Crimea
-	if = {
-		limit = { original_tag = CRM }
-		if = {
-			limit = { has_idea = CRM_tourism_idea }
-			set_variable = { additional_income_CRM_tourism_idea = 0.100 }
-			add_to_variable = { additional_income_rate = additional_income_CRM_tourism_idea }
-		}
-		if = {
-			limit = { has_idea = CRM_naval }
-			set_variable = { additional_income_CRM_naval = 0.045 }
-			add_to_variable = { additional_income_rate = additional_income_CRM_naval }
-		}
-	}
 	#Yugra
-	if = {
-		limit = { original_tag = KHM }
-		if = {
-			limit = { has_idea = KHM_Idea_Forestry_Development }
-			set_variable = { additional_income_KHM_Forestry_Development = 0.082 }
-			add_to_variable = { additional_income_rate = additional_income_KHM_Forestry_Development }
-		}
-	}
 	#South Ossetia
 	# FIXME: Missing all of the tooltips in the money UI
-	if = {
-		limit = { original_tag = SOO }
-		if = {
-			limit = { has_idea = SOO_help_ossetia }
-			set_variable = { additional_income_SOO_help_ossetia = 0.120 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_help_ossetia }
-		}
-		if = {
-			limit = { has_idea = SOO_develop_turism }
-			set_variable = { additional_income_SOO_develop_turism = 0.100 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_develop_turism }
-		}
-		if = {
-			limit = { has_idea = SOO_Idea_Forestry_Development }
-			set_variable = { additional_income_SOO_Forestry_Development = 0.012 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_Forestry_Development }
-		}
-		if = {
-			limit = { has_idea = SOO_Raise_Import_Tariffs_idea }
-			set_variable = { additional_income_SOO_Raise_Import_Tariffs = 0.012 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_Raise_Import_Tariffs }
-		}
-		if = {
-			limit = { has_idea = SOO_Roki_tunnel_toll }
-			set_variable = { additional_income_SOO_Roki_tunnel_toll = 0.014 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_Roki_tunnel_toll }
-		}
-		if = {
-			limit = { has_completed_focus = SOO_increase_tolls_on_Roki_Tunnel }
-			set_variable = { additional_income_SOO_Roki_tunnel_toll = 0.024 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_Roki_tunnel_toll }
-		}
-		if = {
-			limit = { has_completed_focus = SOO_the_Russian_bankroll }
-			set_variable = { additional_income_SOO_russian_bank = 0.010 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_russian_bank }
-		}
-		if = {
-			limit = { has_completed_focus = SOO_subsidise_the_Farmers }
-			set_variable = { additional_income_SOO_farming_income_idea = 0.005 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_farming_income_idea }
-		}
-		if = {
-			limit = { has_completed_focus = SOO_Move_towards_cash_crop_growth }
-			set_variable = { additional_income_SOO_farming_income_idea = 0.012 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_farming_income_idea }
-		}
-		if = {
-			limit = { has_completed_focus = SOO_Boost_the_local_flour_production }
-			set_variable = { additional_income_SOO_farming_income_idea = 0.008 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_farming_income_idea }
-		}
-		if = {
-			limit = { has_completed_focus = SOO_Geared_for_hardship }
-			set_variable = { additional_income_SOO_farming_income_idea = 0.008 }
-			add_to_variable = { additional_income_rate = additional_income_SOO_farming_income_idea }
-		}
-	}
 	##South KOREA
-	if = {
-		limit = { original_tag = KOR }
-		if = {
-			limit = { has_idea = KOR_samsung_phone_sales }
-			set_variable = { additional_income_KOR_samsung_phone_sales_gain = 0.5 }
-			add_to_variable = { additional_income_rate = additional_income_KOR_samsung_phone_sales_gain }
-		}
-	}
 	##North Korea
-	if = {
-		limit = { original_tag = NKO }
-		if = {
-			limit = { has_idea = NKO_idea_outsource_international_animation }
-			set_variable = { additional_income_NKO_outsource_international_animation = 0.05 }
-			add_to_variable = { additional_income_rate = additional_income_NKO_outsource_international_animation }
-		}
-		if = {
-			limit = { has_idea = NKO_korean_repair_frontline_workers_sov }
-			set_variable = { additional_income_NKO_korean_repair_frontline_workers_sov = 0.100 }
-			add_to_variable = { additional_income_rate = additional_income_NKO_korean_repair_frontline_workers_sov }
-		}
-		else_if = {
-			limit = { has_idea = NKO_korean_repair_civil_workers_sov }
-			set_variable = { additional_income_NKO_korean_repair_civil_workers_sov = 0.075 }
-			add_to_variable = { additional_income_rate = additional_income_NKO_korean_repair_civil_workers_sov }
-		}
-		if = {
-			limit = { has_idea = NKO_china_economic_assistant }
-			set_variable = { additional_income_china_economic_assistant = 0.200 }
-			add_to_variable = { additional_income_rate = additional_income_china_economic_assistant }
-		}
-		if = {
-			limit = { has_idea = NKO_jangmadang_idea }
-			set_variable = { additional_income_NKO_jangmadang_idea = 0.200 }
-			add_to_variable = { additional_income_rate = additional_income_NKO_jangmadang_idea }
-		}
-	}
 
 
 	# Botswana
-	if = {
-		limit = { original_tag = BOT }
-		if = {
-			limit = { has_idea = BOT_coal_focused_energy_small_profit }
-			set_variable = { additional_income_BOT_coal_focused_energy_small_profit = 0.05 }
-			add_to_variable = { additional_income_rate = additional_income_BOT_coal_focused_energy_small_profit }
-		}
-		if = {
-			limit = { has_idea = BOT_coal_focused_energy_rich }
-			set_variable = { additional_income_BOT_coal_focused_energy_rich = 0.1 }
-			add_to_variable = { additional_income_rate = additional_income_BOT_coal_focused_energy_rich }
-		}
-		if = {
-			limit = { has_idea = BOT_renewable_focused_energy_small_profit }
-			set_variable = { additional_income_BOT_renewable_focused_energy_small_profit = 0.04 }
-			add_to_variable = { additional_income_rate = additional_income_BOT_renewable_focused_energy_small_profit }
-		}
-		if = {
-			limit = { has_idea = BOT_renewable_focused_energy_rich }
-			set_variable = { additional_income_BOT_renewable_focused_energy_rich = 0.08 }
-			add_to_variable = { additional_income_rate = additional_income_BOT_renewable_focused_energy_rich }
-		}
-	}
 	##Brazil
-	if = {
-		limit = { original_tag = BRA }
-		if = {
-			limit = { has_idea = BRA_idea_plano_real }
-			set_variable = { additional_income_BRA_plano_real = 0.25 }
-			add_to_variable = { additional_income_rate = additional_income_BRA_plano_real }
-		}
-	}
 	# Bulgaria
-	if = {
-		limit = { original_tag = BUL }
-		if = {
-			limit = { has_idea = BUL_tourism }
-			set_variable = { additional_income_BUL_tourism = 0.15 }
-			add_to_variable = { additional_income_rate = additional_income_BUL_tourism }
-		}
-		if = {
-			limit = { has_idea = BUL_tourism_1 }
-			set_variable = { additional_income_BUL_tourism_1 = 0.15 }
-			add_to_variable = { additional_income_rate = additional_income_BUL_tourism_1 }
-		}
-		if = {
-			limit = { has_idea = BUL_tourism_2 }
-			set_variable = { additional_income_BUL_tourism_2 = 0.30 }
-			add_to_variable = { additional_income_rate = additional_income_BUL_tourism_2 }
-		}
-		if = {
-			limit = { has_idea = BUL_sunny_beach_revenue }
-			set_variable = { additional_income_BUL_sunny_beach = 0.60 }
-			add_to_variable = { additional_income_rate = additional_income_BUL_sunny_beach }
-		}
-		if = {
-			limit = { has_idea = BUL_borovets_revenue }
-			set_variable = { additional_income_BUL_borovets = 0.40 }
-			add_to_variable = { additional_income_rate = additional_income_BUL_borovets }
-		}
-		if = {
-			limit = { has_idea = BUL_varna_beaches_revenue }
-			set_variable = { additional_income_BUL_varna_beaches = 0.45 }
-			add_to_variable = { additional_income_rate = additional_income_BUL_varna_beaches }
-		}
-	}
 	# Belarus
-	if = {
-		limit = { original_tag = BLR }
-		if = {
-			limit = { has_idea = BLR_tourism }
-			set_variable = { additional_income_BLR_tourism = 0.15 }
-			add_to_variable = { additional_income_rate = additional_income_BLR_tourism }
-		}
-		if = {
-			limit = { has_idea = BLR_Kommunarka_invest }
-			set_variable = { BLR_Kommunarka_invest_gain = 0.02 }
-			add_to_variable = { additional_income_rate = BLR_Kommunarka_invest_gain }
-		}
-		if = {
-			limit = { has_idea = BLR_Kommunarka_invest_cis }
-			set_variable = { BLR_Kommunarka_invest_cis_gain = 0.12 }
-			add_to_variable = { additional_income_rate = BLR_Kommunarka_invest_cis_gain }
-		}
-		if = {
-			limit = { has_idea = BLR_minotor_servise_blr }
-			set_variable = { additional_income_BLR_minotor_servise_blr = 0.300 }
-			add_to_variable = { additional_income_rate = additional_income_BLR_minotor_servise_blr }
-		}
-		if = {
-			limit = { has_idea = BLR_mzkt_contract_blr }
-			set_variable = { additional_income_BLR_mzkt_contract_blr = 0.100 }
-			add_to_variable = { additional_income_rate = additional_income_BLR_mzkt_contract_blr }
-		}
-		if = {
-			limit = { check_variable = { BLR.current_azot_capacity > 0 } }
-			set_variable = { additional_income_azot = BLR.current_azot_capacity }
-			multiply_variable = { additional_income_azot = 0.050 }
-			add_to_variable = { additional_income_rate = additional_income_azot }
-		}
-		if = {
-			limit = { has_idea = BLR_kal_with }
-			set_variable = { additional_income_BLR_kal_with = 0.150 }
-			add_to_variable = { additional_income_rate = additional_income_BLR_kal_with }
-		}
-		else_if = {
-			limit = { has_idea = BLR_kal_without }
-			set_variable = { additional_income_BLR_kal_without = 0.210 }
-			add_to_variable = { additional_income_rate = additional_income_BLR_kal_without }
-		}
-	}
 	# Russia
 	if = {
 		limit = { original_tag = SOV }
@@ -1314,46 +781,9 @@ calculate_additional_income_rate = {
 		}
 	}
 	# Kazakhstan
-	if = {
-		limit = { original_tag = KAZ }
-		if = {
-			limit = { has_idea = SOV_baikonur_kaz_idea }
-			set_variable = { additional_income_SOV_baikonur_kaz_idea = 0.055 }
-			add_to_variable = { additional_income_rate = additional_income_SOV_baikonur_kaz_idea }
-		}
-	}
 	# Wagner
-	if = {
-		limit = { original_tag = WAG }
-		if = {
-			limit = { has_idea = SOV_prigoba_stroy_idea }
-			set_variable = { additional_income_SOV_prigoba_stroy_idea_gain = 0.080 }
-			add_to_variable = { additional_income_rate = additional_income_SOV_prigoba_stroy_idea_gain }
-		}
-		if = {
-			limit = { has_idea = SOV_prigoba_eda_idea }
-			set_variable = { additional_income_SOV_prigoba_eda_idea_gain = 0.075 }
-			add_to_variable = { additional_income_rate = additional_income_SOV_prigoba_eda_idea_gain }
-		}
-	}
 	# DPR
-	if = {
-		limit = { original_tag = DPR }
-		if = {
-			limit = { has_idea = DPR_rf_money }
-			set_variable = { additional_income_DPR_rf_money = 0.100 }
-			add_to_variable = { additional_income_rate = additional_income_DPR_rf_money }
-		}
-	}
 	# Tatarstan
-	if = {
-		limit = { original_tag = TAT }
-		if = {
-			limit = { has_idea = TAT_develop_turism }
-			set_variable = { additional_income_TAT_develop_turism = 0.100 }
-			add_to_variable = { additional_income_rate = additional_income_TAT_develop_turism }
-		}
-	}
 	# Iraq
 	if = {
 		limit = { original_tag = IRQ }
@@ -1380,64 +810,8 @@ calculate_additional_income_rate = {
 		}
 	}
 	# Norway
-	if = {
-		limit = { original_tag = NOR }
-		if = {
-			limit = { has_idea = NOR_bergen_engines }
-			set_variable = { additional_income_NOR_engines = 0.700 }
-			add_to_variable = { additional_income_rate = additional_income_NOR_engines }
-		}
-	}
 	# Tajikistan
-	if = {
-		limit = { original_tag = TAJ }
-		if = {
-			limit = {
-				OR = {
-					has_idea = TAJ_201st_base
-					has_idea = TAJ_201st_base_usa
-					has_idea = TAJ_201st_base_chi
-					has_idea = TAJ_201st_base_raj
-				}
-			}
-			set_variable = { additional_income_TAJ_201st = 0.075 }
-			add_to_variable = { additional_income_rate = additional_income_TAJ_201st }
-		}
-		if = {
-			limit = { has_idea = TAJ_201st_base_upgrade }
-			set_variable = { additional_income_TAJ_201st_upgrade = 0.175 }
-			add_to_variable = { additional_income_rate = additional_income_TAJ_201st_upgrade }
-		}
-		if = {
-			limit = { has_idea = TAJ_gulfs_bankroll_idea }
-			set_variable = { additional_income_TAJ_bankroll = 0.050 }
-			add_to_variable = { additional_income_rate = additional_income_TAJ_bankroll }
-		}
-	}
 	# Liechtenstein
-	if = {
-		limit = { original_tag = LIC }
-		if = {
-			limit = { has_idea = LIC_idea_international_investments }
-			set_variable = { additional_income_LIC_international_investments = 0.4 }
-			add_to_variable = { additional_income_rate = additional_income_LIC_international_investments }
-		}
-		if = {
-			limit = { has_idea = LIC_idea_USA_cooperation }
-			set_variable = { additional_income_LIC_USA_cooperation = 0.1 }
-			add_to_variable = { additional_income_rate = additional_income_LIC_USA_cooperation }
-		}
-		if = {
-			limit = { has_idea = LIC_idea_EU_cooperation }
-			set_variable = { additional_income_LIC_EU_cooperation = 0.1 }
-			add_to_variable = { additional_income_rate = additional_income_LIC_EU_cooperation }
-		}
-		if = {
-			limit = { has_idea = LIC_idea_huge_tax_haven }
-			set_variable = { additional_income_LIC_huge_tax_haven = 0.075 }
-			add_to_variable = { additional_income_rate = additional_income_LIC_huge_tax_haven }
-		}
-	}
 	#Iran
 	if = {
 		limit = { original_tag = PER }
@@ -1470,68 +844,9 @@ calculate_additional_income_rate = {
 		}
 	}
 	#UK
-	if = {
-		limit = { original_tag = ADS }
-		if = {
-			limit = { has_idea = ENG_ADS_money }
-			set_variable = { additional_income_ENG_ADS_money = 2.0 }	#10% of GDP yearly estimated weekly
-			add_to_variable = { additional_income_rate = additional_income_ENG_ADS_money }
-		}
-	}
 	#Venezuela
-	if = {
-		limit = { original_tag = VEN }
-		if = {
-			limit = { has_idea = VEN_iron_control_vdp }
-			set_variable = { additional_income_iron_control_vdp = gdp_total }
-			multiply_variable = { additional_income_iron_control_vdp = 0.002 }	#10% of GDP yearly estimated weekly
-			add_to_variable = { additional_income_rate = additional_income_iron_control_vdp }
-		}
-	}
 	#Germany
-	if = {
-		limit = { original_tag = GER }
-		if = {
-			limit = { has_idea = GER_russian_buddies }
-			set_variable = { additional_income_GER_russian_buddies = gdp_total }
-			multiply_variable = { additional_income_GER_russian_buddies = 0.0004 } #2% of yearly GDP yearly estimated weekly
-			add_to_variable = { additional_income_rate = additional_income_GER_russian_buddies }
-		}
-		if = {
-			limit = { has_idea = GER_idea_okosteuer }
-			set_variable = { additional_income_GER_Ökosteuer = GER.gdp_per_capita }
-			multiply_variable = { additional_income_GER_Ökosteuer = 0.009 } #2% of yearly GDP estimated weekly
-			add_to_variable = { additional_income_rate = additional_income_GER_Ökosteuer }
-		}
-		if = {
-			limit = { has_country_flag = GER_Solidaritatszuschlag }
-			set_variable = { additional_income_GER_Solidaritatszuschlag = GER.gdp_per_capita }
-			multiply_variable = { additional_income_GER_Solidaritatszuschlag = 0.0044 } #2% of yearly GDP estimated weekly
-			add_to_variable = { additional_income_rate = additional_income_GER_Solidaritatszuschlag }
-		}
-		if = {
-			limit = { has_country_flag = GER_Mehrwertsteuer }
-			set_variable = { additional_income_GER_Mehrwertsteuer = GER.gdp_per_capita }
-			multiply_variable = { additional_income_GER_Mehrwertsteuer = 0.052 } #8% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_GER_Mehrwertsteuer }
-		}
-	}
 	#Netherlands
-	if = {
-		limit = { original_tag = HOL }
-		if = {
-			limit = { has_country_flag = HOL_BOT }
-			set_variable = { additional_income_HOL_BOT = HOL.gdp_per_capita }
-			multiply_variable = { additional_income_HOL_BOT = 0.0004 } #2% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_HOL_BOT }
-		}
-		if = {
-			limit = { has_idea = HOL_Weed_Center1 }
-			set_variable = { additional_income_HOL_Weed_Center1 = HOL.gdp_per_capita }
-			multiply_variable = { additional_income_HOL_Weed_Center1 = 0.002 } #10% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_HOL_Weed_Center1 }
-		}
-	}
 	#Turkey
 	if = {
 		limit = { original_tag = TUR }
@@ -1553,79 +868,7 @@ calculate_additional_income_rate = {
 		}
 	}
 	#Spain
-	if = { limit = { original_tag = SPR }
-		if = {
-			limit = { has_idea = SPR_idea_tourist_industry_1 }
-			add_to_variable = { additional_income_rate = SPR_tourism_1_effect }
-		}
-		if = {
-			limit = { has_idea = SPR_idea_tourist_industry_2 }
-			add_to_variable = { additional_income_rate = SPR_tourism_2_effect }
-		}
-		if = {
-			limit = { has_idea = SPR_idea_tourist_industry_3 }
-			add_to_variable = { additional_income_rate = SPR_tourism_3_effect }
-		}
-	}
 	#Sweden
-	if = {
-		limit = { original_tag = SWE }
-		set_variable = { additional_income_SWE_Value_added_Tax = gdp_per_capita }
-		multiply_variable = { additional_income_SWE_Value_added_Tax = 0.0012 } #20% of yearly GDP
-		add_to_variable = { additional_income_rate = additional_income_SWE_Value_added_Tax }
-		if = {
-			limit = { country_exists = NOR }
-			set_variable = { additional_income_SWE_border_trade = NOR.gdp_per_capita }
-			multiply_variable = { additional_income_SWE_border_trade = 0.0002 } #2% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_SWE_border_trade }
-		}
-		if = {
-			limit = { NOT = { has_idea = social_01 } }
-			set_variable = { additional_income_SWE_Social_insurance = welfare_gain } #gdp_per_capita
-			multiply_variable = { additional_income_SWE_Social_insurance = 0.08 } #30% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_SWE_Social_insurance }
-		}
-		if = {
-			limit = {
-				has_country_flag = SWE_idea_tourist_industry_1
-				NOT = { has_war = yes }
-			}
-			set_variable = { additional_income_SWE_tourism_1 = SWE.gdp_per_capita }
-			multiply_variable = { additional_income_SWE_tourism_1 = 0.01 } #1% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_SWE_tourism_1 }
-		}
-		if = {
-			limit = {
-				has_country_flag = SWE_idea_tourist_industry_2
-				NOT = { has_war = yes }
-			}
-			set_variable = { additional_income_SWE_tourism_2 = SWE.gdp_per_capita }
-			multiply_variable = { additional_income_SWE_tourism_2 = 0.02 } #2% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_SWE_tourism_2 }
-		}
-		if = {
-			limit = {
-				has_country_flag = SWE_idea_tourist_industry_3
-				NOT = { has_war = yes }
-			}
-			set_variable = { additional_income_SWE_tourism_3 = SWE.gdp_per_capita }
-			multiply_variable = { additional_income_SWE_tourism_3 = 0.03 } #3% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_SWE_tourism_3 }
-		}
-		if = {
-			limit = {
-				has_country_flag = SWE_idea_tourist_industry_4
-				NOT = { has_war = yes }
-			}
-			set_variable = { additional_income_SWE_tourism_4 = SWE.gdp_per_capita }
-			multiply_variable = { additional_income_SWE_tourism_4 = 0.04 } #3% of yearly GDP
-			add_to_variable = { additional_income_rate = additional_income_SWE_tourism_4 }
-		}
-		if = {
-			limit = { has_country_flag = SWE_Crypto_invest }
-			add_to_variable = { additional_income_rate = SWE_Crypto_income_effect }
-		}
-	}
 
 	# France
 	if = { limit = { original_tag = FRA }
@@ -1665,17 +908,6 @@ calculate_additional_income_rate = {
 		}
 	}
 	# Singapore
-	if = { limit = { original_tag = SIN }
-		if = { limit = { has_dynamic_modifier = { modifier = SIN_singaporean_trade_strength } }
-			set_variable = { SIN_tariff_income = signed_trade_agreements }
-			multiply_variable = { SIN_tariff_income = 0.075 }
-			add_to_variable = { additional_income_rate = SIN_tariff_income }
-		}
-		if = { limit = { has_idea = SIN_temasek }
-			set_variable = { SIN_temasek_dividend_income = 0.25 }
-			add_to_variable = { additional_income_rate = SIN_temasek_dividend_income }
-		}
-	}
 	# Syria
 	if = { limit = { original_tag = SYR }
 		if = {
@@ -1685,13 +917,6 @@ calculate_additional_income_rate = {
 		}
 	}
 	#INDIA
-	if = { limit = { original_tag = RAJ }
-		if = {
-			limit = { has_idea = RAJ_Local_markets }
-			set_variable = { RAJ_Local_markets_income = 0.08 }
-			add_to_variable = { additional_income_rate = RAJ_Local_markets_income }
-		}
-	}
 	# Gulf
 	if = {
 		limit = { has_idea = gulf_exploitation }
@@ -1700,28 +925,7 @@ calculate_additional_income_rate = {
 		add_to_variable = { additional_income_rate = additional_income_gulf_exploitation }
 	}
 	# Denmark
-	if = {
-		limit = { original_tag = DEN }
-		if = {
-			limit = { has_dynamic_modifier = { modifier = DEN_colonial_holding_modifier } }
-			set_variable = { additional_income_gulf_exploitation = gdp_total }
-
-			add_to_variable = { additional_income_rate = additional_income_gulf_exploitation }
-		}
-		set_variable = { additional_income_DEN_consume_tax = gdp_per_capita }
-		multiply_variable = { additional_income_DEN_consume_tax = 0.0084 }
-		multiply_variable = { additional_income_DEN_consume_tax = welfare_gain }
-		add_to_variable = { additional_income_rate = additional_income_DEN_consume_tax }
-	}
 	# Montenegro
-	if = {
-		limit = { original_tag = MNT }
-		if = {
-			limit = { has_idea = MNT_yacht }
-			set_variable = { additional_income_mnt_yacht = 0.215 }
-			add_to_variable = { additional_income_rate = additional_income_mnt_yacht }
-		}
-	}
 	# Egypt
 	if = {
 		limit = { original_tag = EGY }
@@ -1767,35 +971,7 @@ calculate_additional_income_rate = {
 		}
 	}
 	#Libya
-	if = {
-		limit = {
-			OR = {
-				original_tag = LBA
-				original_tag = FEZ
-				original_tag = CYR
-				original_tag = TRP
-			}
-			NOT = { has_country_flag = libya_noc_dismantled }
-		}
-		set_variable = { libya_oil_nationalisation_additional_income = resource_produced@oil }
-		multiply_variable = { libya_oil_nationalisation_additional_income = oil_nationalisation_income }
-		add_to_variable = { additional_income_rate = libya_oil_nationalisation_additional_income }
-	}
 	# Vatican City
-	if = { limit = { original_tag = HLS }
-		if = {
-			limit = { has_idea = HLS_idea_holy_see }
-			every_collection_element = {
-				input = {
-					input = collection:christian_countries_of_the_world
-				}
-				add_to_temp_variable = { gdp_total_temp = gdp_total }
-			}
-			multiply_temp_variable = { gdp_total_temp = 0.00002 }
-			set_variable = { HLS_holy_see_tithe_income = gdp_total_temp }
-			add_to_variable = { additional_income_rate = HLS_holy_see_tithe_income }
-		}
-	}
 	#Sold Equipment Tax Income
 	if = {
 		limit = { check_variable = { market_sold_contracts > 0 } }
@@ -1957,47 +1133,8 @@ calculate_additional_income_rate = {
 		add_to_variable = { additional_income_rate = CZE_HUN_gain_income_trade }
 	}
 	# Tanzania
-	if = {
-		limit = { original_tag = TNZ }
-		if = {
-			limit = { has_country_flag = COM_the_zanzibar_agreement_payee }
-			set_variable = { additional_income_COM_zanzibar_agreement_payee = 0.250 }
-			add_to_variable = { additional_income_rate = additional_income_COM_zanzibar_agreement_payee }
-		}
-	}
 	# Comoros
-	if = {
-		limit = { original_tag = COM }
-		if = {
-			limit = {
-				has_completed_focus = COM_african_mercenaries
-				has_completed_focus = COM_a_rifle_for_hire
-			}
-			set_variable = { additional_income_COM_african_mercenaries = 0.500 }
-			multiply_variable = { additional_income_COM_african_mercenaries = COM_volunteer_nations^num }
-			add_to_variable = { additional_income_rate = additional_income_COM_african_mercenaries }
-		}
-		else_if = {
-			limit = {
-				OR = {
-					has_completed_focus = COM_african_mercenaries
-					has_completed_focus = COM_a_rifle_for_hire
-				}
-			}
-			set_variable = { additional_income_COM_african_mercenaries = 0.350 }
-			multiply_variable = { additional_income_COM_african_mercenaries = COM_volunteer_nations^num }
-			add_to_variable = { additional_income_rate = additional_income_COM_african_mercenaries }
-		}
-	}
 	# Georgia
-	if = {
-		limit = { original_tag = GEO }
-		if = {
-			limit = { has_idea = GEO_nationalized_gold_reserves_idea }
-			set_variable = { additional_income_GEO_nationalized_gold_reserves = 0.175 }
-			add_to_variable = { additional_income_rate = additional_income_GEO_nationalized_gold_reserves }
-		}
-	}
 
 	# Energy Load Sharing Income
 	if = { limit = { check_variable = { energy_load_sharing_nations^num > 0 } }
@@ -3435,19 +2572,7 @@ calculate_additional_expense_rate = {
 	}
 	# Country Specific
 	# Artsakh
-	if = {
-		limit = { original_tag = NKR }
-		if = {
-			limit = { has_idea = NKR_marz_arm }
-			set_variable = { additional_expense_NKR_marz_arm = 0.350 }
-			add_to_variable = { additional_expenses_rate = additional_expense_NKR_marz_arm }
-		}
-	}
 	# Canada
-	if = {
-		limit = { tag = CAN }
-		add_to_variable = { additional_expenses_rate = CAN_subsidy_total }
-	}
 	# Syrian Stuff
 	# Syria
 	if = {
@@ -3529,19 +2654,6 @@ calculate_additional_expense_rate = {
 		}
 	}
 	# Romania
-	if = {
-		limit = { original_tag = ROM }
-		if = {
-			limit = { has_idea = ROM_economy_of_the_new_century3 }
-			set_variable = { additional_expense_pnt_liberal_economy = 0.05 }
-			add_to_variable = { additional_expenses_rate = additional_expense_pnt_liberal_economy }
-		}
-		if = {
-			limit = { has_idea = ROM_rural_infrastructure_renewal }
-			set_variable = { additional_expense_pnt_infrastructure_project = 0.05 }
-			add_to_variable = { additional_expenses_rate = additional_expense_pnt_infrastructure_project }
-		}
-	}
 	# Qatar
 	if = {
 		limit = { original_tag = QAT }
@@ -3552,28 +2664,7 @@ calculate_additional_expense_rate = {
 		}
 	}
 	# Botswana
-	if = {
-		limit = { original_tag = BOT }
-		if = {
-			limit = { has_idea = BOT_coal_focused_energy }
-			set_variable = { additional_expense_BOT_coal_focused_energy = 0.05 }
-			add_to_variable = { additional_expenses_rate = additional_expense_BOT_coal_focused_energy }
-		}
-		if = {
-			limit = { has_idea = BOT_renewable_focused_energy }
-			set_variable = { additional_expense_BOT_renewable_focused_energy = 0.05 }
-			add_to_variable = { additional_expenses_rate = additional_expense_BOT_renewable_focused_energy }
-		}
-	}
 	# Liechtenstein
-	if = {
-		limit = { original_tag = LIC }
-		if = {
-			limit = { has_idea = LIC_idea_foreign_workers }
-			set_variable = { additional_expense_LIC_foreign_workers = 0.01 }
-			add_to_variable = { additional_expenses_rate = additional_expense_LIC_foreign_workers }
-		}
-	}
 	# China
 	if = {
 		limit = { original_tag = CHI }
@@ -3585,43 +2676,7 @@ calculate_additional_expense_rate = {
 	}
 
 	# Italy
-	if = {
-		limit = { original_tag = ITA }
-		add_to_variable = { additional_expenses_rate = ITA_additional_expenses_var }
-	}
 	# Germany
-	if = {
-		limit = { original_tag = GER }
-		if = {
-			limit = { has_idea = GER_idea_war_reparations }
-			set_variable = { additional_expense_GER_war_debt = 0.731 }
-			add_to_variable = { additional_expenses_rate = additional_expense_GER_war_debt }
-		}
-		if = {
-			limit = { has_country_flag = GER_subventions_mining }
-			set_variable = { additional_expense_GER_subventions_mining = GER.gdp_per_capita }
-			multiply_variable = { additional_expense_GER_subventions_mining = 0.5 } #2% of yearly GDP
-			multiply_variable = { additional_expense_GER_subventions_mining = 0.02 } #weekly
-			add_to_variable = { additional_expenses_rate = additional_expense_GER_subventions_mining }
-		}
-		if = {
-			limit = { has_country_flag = GER_subventions_agrar }
-			set_variable = { additional_expense_GER_subventions_agrar = GER.gdp_per_capita }
-			multiply_variable = { additional_expense_GER_subventions_agrar = 0.7 } #2% of yearly GDP
-			multiply_variable = { additional_expense_GER_subventions_agrar = 0.02 } #weekly
-			add_to_variable = { additional_expenses_rate = additional_expense_GER_subventions_agrar }
-		}
-		if = {
-			limit = { has_idea = SOV_nord_stream_idea }
-			set_variable = { additional_expense_SOV_nord_stream_idea = 1.375 }
-			add_to_variable = { additional_expenses_rate = additional_expense_SOV_nord_stream_idea }
-		}
-		if = {
-			limit = { has_idea = SOV_nord_stream2_idea }
-			set_variable = { additional_expense_SOV_nord_stream2_idea = 1.375 }
-			add_to_variable = { additional_expenses_rate = additional_expense_SOV_nord_stream2_idea }
-		}
-	}
 	# Iraq
 	if = {
 		limit = { original_tag = USA }
@@ -3650,19 +2705,6 @@ calculate_additional_expense_rate = {
 		}
 	}
 	# Belarus
-	if = {
-		limit = { original_tag = BLR }
-		if = {
-			limit = { has_idea = BLR_oil_russian }
-			set_variable = { additional_expense_BLR_oil_russian = 0.044 }
-			add_to_variable = { additional_expenses_rate = additional_expense_BLR_oil_russian }
-		}
-		else_if = {
-			limit = { has_idea = BLR_oil_russian_positive }
-			set_variable = { additional_expense_BLR_oil_russian_positive = 0.066 }
-			add_to_variable = { additional_expenses_rate = additional_expense_BLR_oil_russian_positive }
-		}
-	}
 	# Russia
 	if = {
 		limit = { original_tag = SOV }
@@ -3684,24 +2726,6 @@ calculate_additional_expense_rate = {
 		}
 	}
 	# Ukraine
-	if = {
-		limit = { original_tag = UKR }
-		if = {
-			limit = { has_idea = UKR_russian_gas }
-			set_variable = { additional_expense_UKR_russian_gas = 0.175 }
-			add_to_variable = { additional_expenses_rate = additional_expense_UKR_russian_gas }
-		}
-		else_if = {
-			limit = { has_idea = UKR_russian_gas_cheap }
-			set_variable = { additional_expense_UKR_russian_gas = 0.100 }
-			add_to_variable = { additional_expenses_rate = additional_expense_UKR_russian_gas }
-		}
-		else_if = {
-			limit = { has_idea = UKR_russian_gas_cheaper }
-			set_variable = { additional_expense_UKR_russian_gas = 0.100 }
-			add_to_variable = { additional_expenses_rate = additional_expense_UKR_russian_gas }
-		}
-	}
 	# Egypt
 	if = {
 		limit = { original_tag = EGY }
@@ -3756,69 +2780,11 @@ calculate_additional_expense_rate = {
 		}
 	}
 	# Czech Republic
-	if = {
-		limit = { original_tag = CZE }
-		if = {
-			limit = {
-				has_completed_focus = CZE_keynesianism
-			}
-			set_variable = { CZE_increased_state_expenditure = gdp_total }
-			multiply_variable = { CZE_increased_state_expenditure = CZE.CZE_increased_state_expenditure_multiplier }
-			add_to_variable = { additional_expenses_rate = CZE_increased_state_expenditure }
-		}
-		if = {
-			limit = { has_idea = CZE_foreign_monarchy_intromision }
-			set_variable = { CZE_foreign_monarchy = 0.5 }
-			add_to_variable = { additional_expenses_rate = CZE_foreign_monarchy }
-		}
-	}
 
 	# Hungary
-	if = {
-		limit = { original_tag = HUN }
-		if = {
-			limit = {
-				has_idea = CZE_HUN_manipulating_our_commerce
-			}
-			set_variable = { CZE_HUN_stolen_income = resource_sale_rate }
-			multiply_variable = { CZE_HUN_stolen_income = 0.1 }
-			add_to_variable = { additional_expenses_rate = CZE_HUN_stolen_income }
-		}
-	}
 	# North Korea
-	if = {
-		limit = { original_tag = NKO }
-		if = {
-			limit = { has_idea = SOV_korean_stream_idea }
-			set_variable = { additional_expense_SOV_korean_stream_idea = 0.375 }
-			add_to_variable = { additional_expenses_rate = additional_expense_SOV_korean_stream_idea }
-		}
-	}
 	# Comoros
-	if = {
-		limit = { original_tag = COM }
-		if = {
-			limit = { has_country_flag = COM_the_zanzibar_agreement_pay }
-			set_variable = { additional_expense_COM_zanzibar_agreement = 0.250 }
-			add_to_variable = { additional_expenses_rate = additional_expense_COM_zanzibar_agreement }
-		}
-	}
 	#Japan
-	if = {
-		limit = { original_tag = JAP }
-		if = {
-			limit = { has_idea = JAP_focus_renewable_energy_idea }
-			set_variable = { JAP_focus_renewable_energy_expenses = gdp_total }
-			multiply_variable = { JAP_focus_renewable_energy_expenses = 0.001 }
-			add_to_variable = { additional_expenses_rate = JAP_focus_renewable_energy_expenses }
-		}
-		if = {
-			limit = { has_idea = JAP_focus_thermal_power_idea }
-			set_variable = { JAP_focus_thermal_power_expenses = gdp_total }
-			multiply_variable = { JAP_focus_thermal_power_expenses = 0.001 }
-			add_to_variable = { additional_expenses_rate = JAP_focus_thermal_power_expenses }
-		}
-	}
 	# Energy Load Sharing
 	if = { limit = { has_country_flag = energy_load_sharing_recipient }
 		set_temp_variable = { payment_from_gw_bought = energy_load_sharing_gain_var }

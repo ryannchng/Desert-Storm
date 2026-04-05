@@ -1,1 +1,1 @@
-#purged
+# Empty after Desert Storm submod pruning — safe to leave

@@ -458,60 +458,9 @@ country_event = {
 	desc = france_md.100.d
 	picture = GFX_armenia_france
 	is_triggered_only = yes
-	trigger = {
-		original_tag = FRA
-		country_exists = ARM
-	}
-
-	# Support Armenia Politically
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = france_md.100.a
-		log = "[GetDateText]: [This.GetName]: france_md.100.a executed"
-
-		set_country_flag = FRA_send_arm_political
-		effect_tooltip = {
-			ARM = { add_political_power = 250 }
-			FRA = { add_political_power = -75 }
-		}
-		ARM = { country_event = { id = france_md.101 days = 5 } }
-	}
-	# Support Armenia Financially
-	option = {
-		name = france_md.100.b
-		log = "[GetDateText]: [This.GetName]: france_md.100.b executed"
-
-		set_country_flag = FRA_send_arm_financially
-		effect_tooltip = {
-			ARM = {
-				set_temp_variable = { debt_change = debt }
-				multiply_temp_variable = { debt_change = 0.25 }
-				clamp_temp_variable = { var = debt_change max = 50 }
-				modify_debt_effect = yes
-			}
-			FRA = {
-				set_temp_variable = { treasury_change = debt_change }
-				multiply_temp_variable = { treasury_change = -0.85 }
-				modify_treasury_effect = yes
-			}
-		}
-		ARM = { country_event = { id = france_md.101 days = 5 } }
-	}
-	# Support Armenia Militarily
-	option = {
-		name = france_md.100.c
-		log = "[GetDateText]: [This.GetName]: france_md.100.c executed"
-
-		set_country_flag = FRA_send_arm_military
-		effect_tooltip = {
-			FRA = {
-				send_equipment = {
-					equipment = infantry_weapons_1
-					amount = 1000
-					target = ARM
-				}
-			}
-		}
-		ARM = { country_event = { id = france_md.101 days = 5 } }
 	}
 }
 

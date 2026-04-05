@@ -5651,133 +5651,11 @@ country_event = {
 	id = sino_indian.1
 	title = sino_indian.1.t
 	desc = sino_indian.1.d
-
 	picture = GFX_CHI_generic
-
 	is_triggered_only = yes
-
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = sino_indian.1.a #We should send troops to stop this incursion!
-		trigger = { original_tag = RAJ }
-		add_war_support = 0.02
-		CHI = {
-			country_event = { id = sino_indian.3 }
-			add_opinion_modifier = { target = RAJ modifier = resisted_territorial_ambition }
-		}
-		ai_chance = {
-			base = 60
-			modifier = {
-				factor = 2
-				CHI = { check_variable = { chinese_aggression > 0 } }
-			}
-			modifier = {
-				factor = 2
-				CHI = { check_variable = { chinese_aggression > 10 } }
-			}
-			modifier = {
-				factor = 2
-				CHI = { check_variable = { chinese_aggression > 20 } }
-			}
-			modifier = {
-				factor = 2
-				CHI = { check_variable = { chinese_aggression > 30 } }
-			}
-		}
-		log = "[GetDateText]: [This.GetName]: sino_indian.1.a executed"
-	}
-
-	option = {
-		name = sino_indian.1.b #We can do nothing...
-		trigger = {
-			OR = {
-				original_tag = RAJ
-				AND = {
-					original_tag = BHU
-					NOT = {
-						RAJ = { has_guaranteed = BHU }
-					}
-				}
-			}
-		}
-		add_political_power = -50
-		if = {
-			limit = { NOT = { original_tag = BHU } }
-			BHU = { country_event = { id = sino_indian.2 } }
-			diplomatic_relation = {
-				country = BHU
-				relation = guarantee
-				active = no
-			}
-		}
-		else = {
-			set_temp_variable = { percent_change = 3 }
-			set_temp_variable = { tag_index = CHI.id }
-			set_temp_variable = { influence_target = THIS.id }
-			change_influence_percentage = yes
-			every_other_country = { news_event = { id = sino_indian.4 } }
-		}
-		log = "[GetDateText]: [This.GetName]: sino_indian.1.b executed"
-		ai_chance = {
-			base = 20
-			modifier = {
-				factor = 2
-				ROOT = {
-					OR = {
-						AND = {
-							check_variable = { influence_array^0 = CHI }
-							check_variable = { influence_array_val^0 > 19.999 }
-						}
-						AND = {
-							check_variable = { influence_array^1 = CHI }
-							check_variable = { influence_array_val^1 > 19.999 }
-						}
-						AND = {
-							check_variable = { influence_array^2 = CHI }
-							check_variable = { influence_array_val^2 > 19.999 }
-						}
-						AND = {
-							check_variable = { influence_array^3 = CHI }
-							check_variable = { influence_array_val^3 > 19.999 }
-						}
-					}
-				}
-			}
-			modifier = {
-				factor = 2
-				ROOT = {
-					OR = {
-						AND = {
-							check_variable = { influence_array^0 = CHI }
-							check_variable = { influence_array_val^0 > 39.999 }
-						}
-						AND = {
-							check_variable = { influence_array^1 = CHI }
-							check_variable = { influence_array_val^1 > 39.999 }
-						}
-					}
-				}
-			}
-		}
-	}
-
-	option = {
-		name = sino_indian.1.c #Our protectors will come to our defence.
-		trigger = { original_tag = BHU RAJ = { has_guaranteed = BHU } }
-		log = "[GetDateText]: [This.GetName]: sino_indian.1.c executed"
-	}
-
-	option = {
-		name = sino_indian.1.e #We must defend ourselves!
-		trigger = {
-			original_tag = BHU
-			NOT = { RAJ = { has_guaranteed = BHU } }
-		}
-		add_war_support = 0.02
-		CHI = {
-			country_event = { id = sino_indian.3 }
-			add_opinion_modifier = { target = BHU modifier = resisted_territorial_ambition }
-		}
-		log = "[GetDateText]: [This.GetName]: sino_indian.1.e executed"
 	}
 }
 
@@ -5862,80 +5740,11 @@ country_event = {
 	id = sino_indian.3
 	title = sino_indian.3.t
 	desc = sino_indian.3.d
-
 	picture = GFX_RAJ_generic
-
 	is_triggered_only = yes
-
+	# DS_STUB: out-of-scope target removed for Desert Storm submod
 	option = {
 		name = sino_indian.3.a #We should disengage.
-		BHU = {
-			set_temp_variable = { percent_change = 1 }
-			set_temp_variable = { tag_index = CHI.id }
-			set_temp_variable = { influence_target = THIS.id }
-			change_influence_percentage = yes
-		}
-		every_other_country = { news_event = { id = sino_indian.5 } }
-		ai_chance = {
-			base = 60
-		}
-		log = "[GetDateText]: [This.GetName]: sino_indian.3.a executed"
-	}
-
-	option = {
-		name = sino_indian.3.b #We should stand our ground!
-		if = {
-			limit = { RAJ = { has_guaranteed = BHU } }
-			RAJ = { add_opinion_modifier = { target = CHI modifier = territorial_integrity_violation } }
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 589
-					num_provinces = 2
-					on_win = sino_indian.6
-					on_lose = sino_indian.7
-					on_cancel = sino_indian.8
-				}
-				defender = {
-					state = 455
-					num_provinces = 1
-					on_win = sino_indian.7
-					on_lose = sino_indian.6
-					on_cancel = sino_indian.8
-				}
-			}
-		}
-		else = {
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 589
-					num_provinces = 2
-					on_win = sino_indian.6
-					on_lose = sino_indian.7
-					on_cancel = sino_indian.8
-				}
-				defender = {
-					state = 484
-					num_provinces = 2
-					on_win = sino_indian.7
-					on_lose = sino_indian.6
-					on_cancel = sino_indian.8
-				}
-			}
-		}
-		log = "[GetDateText]: [This.GetName]: sino_indian.3.b executed"
-		ai_chance = {
-			base = 20
-			modifier = {
-				factor = 3
-				has_global_flag = CHI_CHINESE_HEGEMONY_FOCUS_PATH
-			}
-			modifier = {
-				factor = 1000
-				has_global_flag = CHI_RED_DAWN_FOCUS_PATH
-			}
-		}
 	}
 }
 
