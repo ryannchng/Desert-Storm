@@ -1,77 +1,176 @@
+###############################################
+# China — August 2, 1990
+# Desert Storm submod — full overwrite of MD 2000-era setup
+# SPECIAL: CHI is a BACKGROUND ACTOR — scripted rails only
+# China abstained on UN Resolution 678 (did not veto)
+# China was Iraq's third-largest arms supplier in the 1980s
+###############################################
+
 capital = 547
+# Beijing — state 547 confirmed
 
-2000.1.1 = {
-	set_variable = { currency_strength = 0.45 }
-	set_variable = { gdp_per_capita = 1.800 }
-	set_country_flag = is_CHINA
-	set_country_flag = dynamic_flag
-	set_country_flag = dynamic_rebel_flag
+set_research_slots = 3
 
-	set_stability = 0.60
-	set_war_support = 0.35
-	add_manpower = 3500000
+set_stability = 0.50
+# Post-Tiananmen (June 1989) — international isolation, sanctions
+# Jiang Zemin consolidating power after Tiananmen crackdown
+# Economy rebounding but political legitimacy strained
 
-	set_technology = {
-		integrated_transportation_system = 1
-		post_conventional_rail = 1
-		early_freight_locomotive = 1
-		infantry_mass_assault = 1
-		infantry_weapons_1 = 1
-		infantry_weapons_2 = 1
-		support_weapons = 1
-		support_weapons2 = 1
-		combat_eng_equipment = 1
-		night_vision_1 = 1
-		cnc_equipment_1 = 1
-		util_vehicle_1 = 1
-		Anti_tank_0 = 1
-		Heavy_Anti_tank_0 = 1
-		Anti_Air_0 = 1
-		basic_computing = 1
-		integrated_circuit = 1
-		computing1 = 1
-		radar = 1
-		fuel_silos = 1
-		fuel_refining = 1
-		construction1 = 1
-	}
+set_war_support = 0.25
+# Not at war; focused entirely on internal consolidation
+# Gulf War is a distant concern; China abstained rather than vetoed
 
-	if = {
-		limit = { NOT = { has_dlc = "La Resistance" } }
-		set_technology = {
-			decryption1 = 1
-			encryption1 = 1
-		}
-	}
-
-	set_popularities = {
-		democratic = 10.0
-		communism = 82.0
-		fascism = 0.0
-		neutrality = 6.0
-		nationalist = 2.0
-	}
-	set_politics = {
-		ruling_party = communism
-		last_election = "1989.6.24"
-		election_frequency = 48
-		elections_allowed = no
-	}
-
-	start_politics_input = yes
-	startup_politics = yes
-	set_variable = { party_pop_array^1 = 0.05 }
-	set_variable = { party_pop_array^2 = 0.05 }
-	set_variable = { party_pop_array^4 = 0.82 }
-	set_variable = { party_pop_array^7 = 0.04 }
-	set_variable = { party_pop_array^20 = 0.04 }
-
-	create_country_leader = {
-		name = "Jiang Zemin"
-		picture = "Jiang_Zemin.dds"
-		ideology = Communist-State
-		traits = {
-			emerging_Communist-State
-		}
-	}
+set_politics = {
+	ruling_party = communism
+	last_election = "1900.1.1"
+	election_frequency = 0
+	elections_allowed = no
 }
+
+set_popularities = {
+	democratic = 10
+	communism = 75
+	fascism = 2
+	neutrality = 13
+}
+
+create_country_leader = {
+	name = "Jiang Zemin"
+	picture = "GFX_portrait_CHI_Jiang_Zemin"
+	# portrait: Jiang_Zemin.dds confirmed in gfx/leaders/CHI/
+	expire = "2022.11.30"
+	# Died November 30 2022
+	ideology = marxism
+	traits = { }
+}
+
+create_corps_commander = {
+	name = "Yang Baibing"
+	picture = "GFX_portrait_generic_land_generic"
+	# Chief of the PLA General Political Department 1987-1992
+	# DS_VERIFY: confirm Yang Baibing was senior military figure in 1990
+	traits = { }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+	expire = "2050.1.1"
+}
+
+set_technology = {
+	MBT_1 = 1
+	MBT_2 = 1
+	MBT_3 = 1
+	APC_1 = 1
+	APC_2 = 1
+	APC_3 = 1
+	IFV_1 = 1
+	IFV_2 = 1
+	IFV_3 = 1
+	mbt_tech = 1
+	mbt_tech_1 = 1
+	mbt_tech_2 = 1
+	diesel_engine_tech = 1
+	diesel_engine_tech_2 = 1
+	diesel_engine_tech_3 = 1
+	armor_tech = 1
+	armor_tech_2 = 1
+	tank_ammo_1 = 1
+	tank_ammo_2 = 1
+	tank_ammo_3 = 1
+	defensive_systems = 1
+	defensive_systems_2 = 1
+	infantry_weapons_1 = 1
+	infantry_weapons_2 = 1
+	infantry_weapons_3 = 1
+	support_weapons = 1
+	support_weapons2 = 1
+	util_vehicle_1 = 1
+	util_vehicle_2 = 1
+	util_vehicle_3 = 1
+	night_vision_1 = 1
+	body_armor_1 = 1
+	tech_arty_0 = 1
+	tech_arty_1 = 1
+	tech_arty_2 = 1
+	SP_arty_0 = 1
+	SP_arty_1 = 1
+	Arty_upgrade_1 = 1
+	Arty_upgrade_2 = 1
+	nsb_artillery_0 = 1
+	nsb_artillery_1 = 1
+	nsb_artillery_2 = 1
+	Anti_Air_0 = 1
+	Anti_Air_1 = 1
+	Anti_Air_2 = 1
+	SP_Anti_Air_0 = 1
+	SP_Anti_Air_1 = 1
+	nsb_SHORAD_missile_0 = 1
+	nsb_SHORAD_missile_1 = 1
+	SAM = 1
+	SAM0 = 1
+	SAM1 = 1
+	Anti_tank_0 = 1
+	Anti_tank_1 = 1
+	Anti_tank_2 = 1
+	AT_upgrade_1 = 1
+	AT_upgrade_2 = 1
+	early_fighter = 1
+	AS_Fighter1 = 1
+	AS_Fighter2 = 1
+	MR_Fighter1 = 1
+	Strike_fighter1 = 1
+	Strike_fighter2 = 1
+	cas1 = 1
+	helo_ops_tech = 1
+	nsb_transport_helicopter_1 = 1
+	nsb_transport_helicopter_2 = 1
+	ballistic_missile = 1
+	IRBM = 1
+	IRBM1 = 1
+	TEL_launched_missiles = 1
+	TEL_3 = 1
+	TEL_4 = 1
+	patrol_boat_hull_1_tech = 1
+	corvette_hull_1 = 1
+	corvette_hull_2 = 1
+	frigate_hull_1 = 1
+	frigate_hull_2 = 1
+	destroyer_hull_1 = 1
+	destroyer_hull_2 = 1
+	tech_submarine_engineering_1 = 1
+	tech_submarine_engineering_2 = 1
+	tech_submarine_engineering_3 = 1
+	tech_nuclear_power_systems_1 = 1
+	tech_combat_radar_1 = 1
+	tech_combat_radar_2 = 1
+	tech_combat_sonar_1 = 1
+	tech_combat_sonar_2 = 1
+	tech_torpedoes_1 = 1
+	tech_torpedoes_2 = 1
+	combined_arms = 1
+	basic_computing = 1
+	integrated_circuit = 1
+	computing1 = 1
+	radar = 1
+	GNSS1 = 1
+	COMSAT1 = 1
+	SPYSAT1 = 1
+	SPYSAT2 = 1
+	construction1 = 1
+	construction2 = 1
+	excavation1 = 1
+	fuel_refining = 1
+	nuclear_technology = 1
+}
+
+set_country_flag = CHI_gulf_war_abstain
+# China abstained on UN Resolution 678 November 29 1990
+# Did not use Security Council veto — tacit approval
+# Represents China's pragmatic post-Tiananmen foreign policy
+
+set_oob = "CHI_1990"
+# DS_OOB: see history/units/CHI_1990.txt — to be created in OOB pass
+# DS_NOTE: CHI is on scripted rails — AI should not engage militarily
+# China's role is arms supplier background and UNSC vote mechanic only
